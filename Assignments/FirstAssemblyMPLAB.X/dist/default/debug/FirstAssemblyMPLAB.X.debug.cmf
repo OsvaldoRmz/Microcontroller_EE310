@@ -1,0 +1,283 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/debug/TEMP.o
+absdata - 0 20 20 142 1 1
+config CONFIG 4 300000 300000 A 1 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-FFF 1
+SFR 3800-3FFF 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+BANK8 800-8FF 1
+BANK9 900-9FF 1
+CONST 0-1F 1
+CONST 162-FFFF 1
+IDLOC 200000-20000F 1
+SMALLCONST 1000-FFFF 1
+CODE 0-1F 1
+CODE 162-FFFF 1
+BANK10 A00-AFF 1
+BANK11 B00-BFF 1
+BANK12 C00-CFF 1
+BANK13 D00-DFF 1
+BANK14 E00-EFF 1
+BANK15 F00-FFF 1
+BIGRAM 0-1F 1
+BIGRAM 162-FFF 1
+BIGSFR 3800-3FFF 1
+COMRAM 0-5F 1
+EEDATA 310000-3103FF 1
+MEDIUMCONST 1000-FFFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/debug/TEMP.o
+20 absdata ABS >58:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+22 absdata ABS >59:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+24 absdata ABS >61:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+26 absdata ABS >62:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+28 absdata ABS >63:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+2A absdata ABS >64:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+2C absdata ABS >65:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+2E absdata ABS >66:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+30 absdata ABS >67:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+34 absdata ABS >69:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+36 absdata ABS >70:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+38 absdata ABS >71:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+3A absdata ABS >72:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+3C absdata ABS >73:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+3E absdata ABS >74:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+42 absdata ABS >75:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+46 absdata ABS >77:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+48 absdata ABS >78:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+4C absdata ABS >79:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+4E absdata ABS >80:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+52 absdata ABS >82:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+54 absdata ABS >83:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+56 absdata ABS >84:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+5C absdata ABS >85:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+5E absdata ABS >86:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+60 absdata ABS >87:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+64 absdata ABS >89:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+66 absdata ABS >90:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+68 absdata ABS >91:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+6E absdata ABS >92:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+70 absdata ABS >93:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+72 absdata ABS >94:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+76 absdata ABS >96:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+78 absdata ABS >97:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+7A absdata ABS >98:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+80 absdata ABS >99:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+82 absdata ABS >100:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+84 absdata ABS >101:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+88 absdata ABS >109:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+8A absdata ABS >110:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+8C absdata ABS >111:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+90 absdata ABS >112:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+94 absdata ABS >114:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+96 absdata ABS >115:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+9A absdata ABS >116:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+9C absdata ABS >117:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+A0 absdata ABS >119:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+A2 absdata ABS >120:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+A4 absdata ABS >121:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+AA absdata ABS >122:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+AE absdata ABS >124:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+B0 absdata ABS >125:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+B2 absdata ABS >126:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+B8 absdata ABS >127:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+BC absdata ABS >129:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+BE absdata ABS >130:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+C0 absdata ABS >131:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+C6 absdata ABS >132:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+CA absdata ABS >134:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+CC absdata ABS >135:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+D0 absdata ABS >136:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+D2 absdata ABS >137:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+D6 absdata ABS >138:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+D8 absdata ABS >139:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+DA absdata ABS >140:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+DE absdata ABS >141:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+E2 absdata ABS >143:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+E4 absdata ABS >144:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+E6 absdata ABS >145:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+E8 absdata ABS >146:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+EA absdata ABS >147:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+EE absdata ABS >148:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+F2 absdata ABS >150:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+F4 absdata ABS >151:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+F6 absdata ABS >152:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+F8 absdata ABS >153:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+FA absdata ABS >154:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+FE absdata ABS >155:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+102 absdata ABS >158:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+104 absdata ABS >159:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+106 absdata ABS >160:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+10A absdata ABS >162:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+10C absdata ABS >163:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+10E absdata ABS >164:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+112 absdata ABS >167:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+116 absdata ABS >168:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+118 absdata ABS >169:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+11C absdata ABS >170:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+11E absdata ABS >171:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+122 absdata ABS >172:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+124 absdata ABS >173:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+126 absdata ABS >174:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+12A absdata ABS >175:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+12E absdata ABS >177:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+130 absdata ABS >178:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+132 absdata ABS >179:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+134 absdata ABS >180:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+136 absdata ABS >181:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+13A absdata ABS >182:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+13E absdata ABS >184:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+140 absdata ABS >185:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+142 absdata ABS >186:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+144 absdata ABS >187:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+146 absdata ABS >188:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+14A absdata ABS >189:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+14E absdata ABS >192:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+150 absdata ABS >193:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+152 absdata ABS >194:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+156 absdata ABS >196:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+158 absdata ABS >197:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+15A absdata ABS >198:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+15E absdata ABS >201:C:\Users\osval\Downloads\ProjectFirstAssemblyMPLAB\FirstAssemblyMPLAB.X\TEMP.asm
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Hspace_0 182 0 ABS 0 - -
+__Hspace_1 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 60000A 0 ABS 0 - -
+__Hudata_bank0 0 0 ABS 0 udata_bank0 -
+__Hudata_bank1 0 0 ABS 0 udata_bank1 -
+__Hudata_bank2 0 0 ABS 0 udata_bank2 -
+__Hudata_bank3 0 0 ABS 0 udata_bank3 -
+__Hudata_bank4 0 0 ABS 0 udata_bank4 -
+__Hudata_bank5 0 0 ABS 0 udata_bank5 -
+__Hudata_bank6 0 0 ABS 0 udata_bank6 -
+__Hudata_bank7 0 0 ABS 0 udata_bank7 -
+__Hudata_bank8 0 0 ABS 0 udata_bank8 -
+__Hudata_bank9 0 0 ABS 0 udata_bank9 -
+__L__absolute__ 0 0 ABS 0 __absolute__ -
+__Labsdata 0 0 ABS 0 absdata -
+__Hudata_bank10 0 0 ABS 0 udata_bank10 -
+__Hudata_bank11 0 0 ABS 0 udata_bank11 -
+__Hudata_bank12 0 0 ABS 0 udata_bank12 -
+__Hudata_bank13 0 0 ABS 0 udata_bank13 -
+__Hudata_bank14 0 0 ABS 0 udata_bank14 -
+__Hudata_bank15 0 0 ABS 0 udata_bank15 -
+isa$xinst 0 0 ABS 0 - build/default/debug/TEMP.o
+__Hedata 0 0 ABS 0 edata -
+__Hudata 0 0 ABS 0 udata -
+__Hconfig 30000A 0 CONFIG 4 config -
+__Ledata 0 0 ABS 0 edata -
+__Ludata 0 0 ABS 0 udata -
+__Hcode 0 0 ABS 0 code -
+__Hdata 0 0 ABS 0 data -
+__Lcode 0 0 ABS 0 code -
+__Ldata 0 0 ABS 0 data -
+__Habsdata 162 0 ABS 0 absdata -
+__S0 0 0 ABS 0 - -
+__S1 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__Ludata_bank10 0 0 ABS 0 udata_bank10 -
+__Ludata_bank11 0 0 ABS 0 udata_bank11 -
+__Ludata_bank12 0 0 ABS 0 udata_bank12 -
+__Ludata_bank13 0 0 ABS 0 udata_bank13 -
+__Ludata_bank14 0 0 ABS 0 udata_bank14 -
+__Ludata_bank15 0 0 ABS 0 udata_bank15 -
+__Lconfig 0 0 CONFIG 4 config -
+isa$std 1 0 ABS 0 - build/default/debug/TEMP.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__Ludata_bank0 0 0 ABS 0 udata_bank0 -
+__Ludata_bank1 0 0 ABS 0 udata_bank1 -
+__Ludata_bank2 0 0 ABS 0 udata_bank2 -
+__Ludata_bank3 0 0 ABS 0 udata_bank3 -
+__Ludata_bank4 0 0 ABS 0 udata_bank4 -
+__Ludata_bank5 0 0 ABS 0 udata_bank5 -
+__Ludata_bank6 0 0 ABS 0 udata_bank6 -
+__Ludata_bank7 0 0 ABS 0 udata_bank7 -
+__Ludata_bank8 0 0 ABS 0 udata_bank8 -
+__Ludata_bank9 0 0 ABS 0 udata_bank9 -
+__H__absolute__ 0 0 ABS 0 __absolute__ -
+__Hudata_acs 0 0 ABS 0 udata_acs -
+__Ludata_acs 0 0 ABS 0 udata_acs -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
