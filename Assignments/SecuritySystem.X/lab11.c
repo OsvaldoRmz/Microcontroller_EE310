@@ -118,7 +118,7 @@ void main(void) {
     ANSELB = 0b00000000;
     TRISB = 0b00000001; //sets PORTB.RB0 as input / INT0
     PORTB = 0b00000000;
-    WPUB = 0XFF;//turns off PORTD outputs
+   // WPUB = 0XFF;//turns off PORTD outputs
 
     // enable the weak pull-ups are enabled for port B
 
