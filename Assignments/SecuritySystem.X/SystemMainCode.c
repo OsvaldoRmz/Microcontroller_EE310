@@ -1,4 +1,6 @@
 #include <xc.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "config.h"
 #include "functions.h"
 #include "init.h"
@@ -13,27 +15,31 @@
 void main(void) {
     init_ports();
     INTERRUPT_Initialize();
+    
+    unsigned char first_input;
+    unsigned char second_input;
+    unsigned char code_entered;
+
 
 
     while (1) {
 
         
 
-        unsigned char first_input = read_input(1);  // PR1
+         first_input = read_input(1);  // PR1
         display_digit(first_input);
         wait(1500);
         
-        loop:
-        while (ENTER != 1 ){
-            goto loop;
-        }
+       
+        while (ENTER != 1)
+       
      
 
-        unsigned char second_input = read_input(2);  // PR2
+         second_input = read_input(2);  // PR2
         display_digit(second_input);
         wait(1500);
 
-        unsigned char code_entered = (second_input << 4) | first_input;
+         code_entered = (second_input << 4) | first_input;
 
         if (code_entered == SECRET_CODE) {
     // Success: short on for a bit then turned off

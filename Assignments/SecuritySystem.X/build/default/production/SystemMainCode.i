@@ -26872,7 +26872,163 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 2 "SystemMainCode.c" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 3 "SystemMainCode.c" 2
+
 # 1 "./config.h" 1
+
+
 
 #pragma config FEXTOSC = LP
 #pragma config RSTOSC = EXTOSC
@@ -26922,91 +27078,46 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config CP = OFF
-# 3 "SystemMainCode.c" 2
+# 5 "SystemMainCode.c" 2
 # 1 "./functions.h" 1
 
-# 1 "./config.h" 1
-
-#pragma config FEXTOSC = LP
-#pragma config RSTOSC = EXTOSC
 
 
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
 
 
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_OFF
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = SBORDIS
-
-
-#pragma config BORV = VBOR_2P45
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-# 3 "./functions.h" 2
 # 1 "./init.h" 1
-void INTERRUPT_Initialize (void)
-{
-INTCON0bits.IPEN = 1;
-INTCON0bits.GIEH = 1;
-INTCON0bits.GIEL = 1;
-INTCON0bits.INT0EDG = 1;
-IPR1bits.INT0IP = 1;
-PIE1bits.INT0IE = 1;
-PIR1bits.INT0IF = 0;
 
 
 
 
 
+void INTERRUPT_Initialize(void);
+void init_ports(void);
+# 21 "./init.h"
+void INTERRUPT_Initialize(void) {
+    INTCON0bits.IPEN = 1;
+    INTCON0bits.GIEH = 1;
+    INTCON0bits.GIEL = 1;
+    INTCON0bits.INT0EDG = 1;
+    IPR1bits.INT0IP = 1;
+    PIE1bits.INT0IE = 1;
+    PIR1bits.INT0IF = 0;
 
+    IVTBASEU = 0x00;
+    IVTBASEH = 0x40;
+    IVTBASEL = 0x08;
 }
-void init_ports (void) {
 
-
-
-    ANSELD = 0b0000000;
+void init_ports(void) {
+    ANSELD = 0b00000000;
     TRISD = 0b00000000;
     PORTD = 0b00000000;
+
     ANSELB = 0b00000000;
-    TRISB = 0b00000111;
+    TRISB = 0b00001111;
     PORTB = 0b00000000;
-
 }
-# 4 "./functions.h" 2
-
+# 7 "./functions.h" 2
 
 
 
@@ -27016,12 +27127,13 @@ void wait(unsigned int ms) {
     }
 }
 
+
 unsigned char read_input(unsigned char pr_input) {
     unsigned char count = 0;
     unsigned char last_state = 1;
     unsigned int timeout = 3000;
-
     unsigned int elapsed = 0;
+
     while (elapsed < timeout && count < 4) {
         unsigned char current_state = (pr_input == 1) ? PORTBbits.RB1 : PORTBbits.RB2;
 
@@ -27038,9 +27150,12 @@ unsigned char read_input(unsigned char pr_input) {
     return count;
 }
 
+
 void display_digit(unsigned char digit) {
     PORTD = digit;
 }
+
+
 void play_buzzer_melody(void) {
     for (int i = 0; i < 5; i++) {
         PORTBbits.RB5 = 1;
@@ -27049,84 +27164,50 @@ void play_buzzer_melody(void) {
         wait(100);
     }
 }
-void __attribute__((picinterrupt(("irq(8),base(0x4008)")))) INT0_ISR(void)
-{
-       if(PIR1bits.INT0IF == 1)
-           for (int k = 0; k<10;k++){
-        PORTBbits.RB5 = 0;
-        _delay((unsigned long)((250)*(4000000/4000.0)));
 
-         PORTBbits.RB5 = 1;
-        _delay((unsigned long)((250)*(4000000/4000.0)));
+
+void __attribute__((picinterrupt(("irq(8), base(0x4008)")))) INT0_ISR(void) {
+    if (PIR1bits.INT0IF == 1) {
+        for (int k = 0; k < 10; k++) {
+            PORTBbits.RB5 = 0;
+            _delay((unsigned long)((250)*(4000000/4000.0)));
+            PORTBbits.RB5 = 1;
+            _delay((unsigned long)((250)*(4000000/4000.0)));
         }
-
-
-       PIR1bits.INT0IF = 0;
-       PORTBbits.RB5 = 0;
+        PIR1bits.INT0IF = 0;
+        PORTBbits.RB5 = 0;
     }
-# 4 "SystemMainCode.c" 2
-# 1 "./init.h" 1
-void INTERRUPT_Initialize (void)
-{
-INTCON0bits.IPEN = 1;
-INTCON0bits.GIEH = 1;
-INTCON0bits.GIEL = 1;
-INTCON0bits.INT0EDG = 1;
-IPR1bits.INT0IP = 1;
-PIE1bits.INT0IE = 1;
-PIR1bits.INT0IF = 0;
-
-
-
-
-
-
 }
-void init_ports (void) {
-
-
-
-    ANSELD = 0b0000000;
-    TRISD = 0b00000000;
-    PORTD = 0b00000000;
-    ANSELB = 0b00000000;
-    TRISB = 0b00000111;
-    PORTB = 0b00000000;
-
-}
-# 5 "SystemMainCode.c" 2
-
-
-
-
-
-
-
-
+# 6 "SystemMainCode.c" 2
+# 15 "SystemMainCode.c"
 void main(void) {
     init_ports();
     INTERRUPT_Initialize();
+
+    unsigned char first_input;
+    unsigned char second_input;
+    unsigned char code_entered;
+
 
 
     while (1) {
 
 
 
-        unsigned char first_input = read_input(1);
+         first_input = read_input(1);
         display_digit(first_input);
         wait(1500);
 
-        loop:
-        while (PORTBbits.RB3 != 1 ){
-            goto loop;
-        }
+
+        while (PORTBbits.RB3 != 1)
 
 
-        unsigned char second_input = read_input(2);
+
+         second_input = read_input(2);
         display_digit(second_input);
         wait(1500);
 
-        unsigned char code_entered = (second_input << 4) | first_input;
+         code_entered = (second_input << 4) | first_input;
 
         if (code_entered == 0x23) {
 
