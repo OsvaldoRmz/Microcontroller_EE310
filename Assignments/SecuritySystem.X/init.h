@@ -15,7 +15,11 @@ void init_ports(void);
 #define ENTER       PORTBbits.RB3
 #define EMERGENCY_FLAG PIR1bits.INT0IF
 
+<<<<<<< HEAD
 //#define SECRET_CODE 0x23  // You can change this before running
+=======
+#define SECRET_CODE 0x23  // You can change this before running
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 
 // --- FUNCTION DEFINITIONS ---
 void INTERRUPT_Initialize(void) {
@@ -27,7 +31,13 @@ void INTERRUPT_Initialize(void) {
     PIE1bits.INT0IE = 1;
     PIR1bits.INT0IF = 0;
 
+<<<<<<< HEAD
    
+=======
+    IVTBASEU = 0x00;
+    IVTBASEH = 0x40;
+    IVTBASEL = 0x08;
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 }
 
 void init_ports(void) {

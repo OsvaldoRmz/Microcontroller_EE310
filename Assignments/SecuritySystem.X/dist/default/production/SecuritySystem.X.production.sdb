@@ -3,6 +3,7 @@
 [d edition pro ]
 [d chip 18F47K42 ]
 [d frameptr 16353 ]
+<<<<<<< HEAD
 "14 C:\Users\osval\MPLABXProjects\SecuritySystem.X/functions.h
 [v _wait wait `(v  1 e 1 0 ]
 "21
@@ -16,6 +17,21 @@
 "21 C:\Users\osval\MPLABXProjects\SecuritySystem.X/init.h
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 "33
+=======
+"10 C:\Users\osval\MPLABXProjects\SecuritySystem.X/functions.h
+[v _wait wait `(v  1 e 1 0 ]
+"17
+[v _read_input read_input `(uc  1 e 1 0 ]
+"40
+[v _display_digit display_digit `(v  1 e 1 0 ]
+"45
+[v _play_buzzer_melody play_buzzer_melody `(v  1 e 1 0 ]
+"55
+[v _INT0_ISR INT0_ISR `IIH(v  1 e 1 0 ]
+"21 C:\Users\osval\MPLABXProjects\SecuritySystem.X/init.h
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"35
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 [v _init_ports init_ports `(v  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -41,7 +57,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
+<<<<<<< HEAD
 "15 C:\Users\osval\MPLABXProjects\SecuritySystem.X\MainCode.c
+=======
+"15 C:\Users\osval\MPLABXProjects\SecuritySystem.X\SystemMainCode.c
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 [v _main main `(v  1 e 1 0 ]
 [s S50 . 1 `uc 1 INT0IP 1 0 :1:0 
 `uc 1 ZCDIP 1 0 :1:1 
@@ -52,7 +72,11 @@
 `uc 1 SMT1PRAIP 1 0 :1:6 
 `uc 1 SMT1PWAIP 1 0 :1:7 
 ]
+<<<<<<< HEAD
 "2844 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc/pic18f47k42.h
+=======
+"2844 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f47k42.h
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 [u S59 . 1 `S50 1 . 1 0 ]
 [v _IPR1bits IPR1bits `VES59  1 e 1 @14721 ]
 [s S71 . 1 `uc 1 INT0IE 1 0 :1:0 
@@ -89,7 +113,11 @@
 [v _TRISD TRISD `VEuc  1 e 1 @16325 ]
 "46818
 [v _PORTB PORTB `VEuc  1 e 1 @16331 ]
+<<<<<<< HEAD
 [s S130 . 1 `uc 1 RB0 1 0 :1:0 
+=======
+[s S128 . 1 `uc 1 RB0 1 0 :1:0 
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -99,10 +127,17 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "46835
+<<<<<<< HEAD
 [u S139 . 1 `S130 1 . 1 0 ]
 "46835
 "46835
 [v _PORTBbits PORTBbits `VES139  1 e 1 @16331 ]
+=======
+[u S137 . 1 `S128 1 . 1 0 ]
+"46835
+"46835
+[v _PORTBbits PORTBbits `VES137  1 e 1 @16331 ]
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 "46942
 [v _PORTD PORTD `VEuc  1 e 1 @16333 ]
 [s S24 . 1 `uc 1 INT0EDG 1 0 :1:0 
@@ -122,6 +157,7 @@
 "47062
 "47062
 [v _INTCON0bits INTCON0bits `VES35  1 e 1 @16338 ]
+<<<<<<< HEAD
 "15 C:\Users\osval\MPLABXProjects\SecuritySystem.X\MainCode.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -192,4 +228,82 @@
 "62
 [v INT0_ISR@k k `i  1 a 2 2 ]
 "71
+=======
+"47167
+[v _IVTBASEL IVTBASEL `VEuc  1 e 1 @16341 ]
+"47229
+[v _IVTBASEH IVTBASEH `VEuc  1 e 1 @16342 ]
+"47291
+[v _IVTBASEU IVTBASEU `VEuc  1 e 1 @16343 ]
+"15 C:\Users\osval\MPLABXProjects\SecuritySystem.X\SystemMainCode.c
+[v _main main `(v  1 e 1 0 ]
+{
+"20
+[v main@second_input second_input `uc  1 a 1 21 ]
+"19
+[v main@first_input first_input `uc  1 a 1 20 ]
+"21
+[v main@code_entered code_entered `uc  1 a 1 19 ]
+"56
+} 0
+"17 C:\Users\osval\MPLABXProjects\SecuritySystem.X/functions.h
+[v _read_input read_input `(uc  1 e 1 0 ]
+{
+[v read_input@pr_input pr_input `uc  1 p 1 wreg ]
+"24
+[v read_input@current_state current_state `uc  1 a 1 17 ]
+"21
+[v read_input@elapsed elapsed `ui  1 a 2 12 ]
+"20
+[v read_input@timeout timeout `ui  1 a 2 9 ]
+"18
+[v read_input@count count `uc  1 a 1 18 ]
+"19
+[v read_input@last_state last_state `uc  1 a 1 16 ]
+"17
+[v read_input@pr_input pr_input `uc  1 p 1 wreg ]
+[v read_input@pr_input pr_input `uc  1 p 1 11 ]
+"37
+} 0
+"45
+[v _play_buzzer_melody play_buzzer_melody `(v  1 e 1 0 ]
+{
+"46
+[v play_buzzer_melody@i i `i  1 a 2 8 ]
+"52
+} 0
+"10
+[v _wait wait `(v  1 e 1 0 ]
+{
+"11
+[v wait@i i `ui  1 a 2 6 ]
+"10
+[v wait@ms ms `ui  1 p 2 4 ]
+"14
+} 0
+"35 C:\Users\osval\MPLABXProjects\SecuritySystem.X/init.h
+[v _init_ports init_ports `(v  1 e 1 0 ]
+{
+"43
+} 0
+"40 C:\Users\osval\MPLABXProjects\SecuritySystem.X/functions.h
+[v _display_digit display_digit `(v  1 e 1 0 ]
+{
+[v display_digit@digit digit `uc  1 p 1 wreg ]
+[v display_digit@digit digit `uc  1 p 1 wreg ]
+[v display_digit@digit digit `uc  1 p 1 4 ]
+"42
+} 0
+"21 C:\Users\osval\MPLABXProjects\SecuritySystem.X/init.h
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"33
+} 0
+"55 C:\Users\osval\MPLABXProjects\SecuritySystem.X/functions.h
+[v _INT0_ISR INT0_ISR `IIH(v  1 e 1 0 ]
+{
+"57
+[v INT0_ISR@k k `i  1 a 2 2 ]
+"66
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 } 0

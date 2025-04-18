@@ -3,25 +3,13 @@ Microchip MPLAB XC8 Compiler V3.00
 Linker command line:
 
 -W-3 \
-<<<<<<< HEAD
-  --edf=C:\Program Files\Microchip\xc8\v3.00\pic\dat\20241204225717_en.msgs \
-  -pivt0x4008=04008h -cn \
-  -h+dist/default/production\SecuritySystem.X.production.sym \
-  --cmf=dist/default/production\SecuritySystem.X.production.cmf -z \
-  -Q18F47K42 -oC:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_3.o \
-  --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
-  -Mdist/default/production/SecuritySystem.X.production.map \
-  --md=C:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_0.dat -E1 \
-=======
   --edf=C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\dat\20241213203129_en.msgs \
-  -pivt0x4008=04008h -cn \
-  -h+dist/default/production\SecuritySystem.X.production.sym \
-  --cmf=dist/default/production\SecuritySystem.X.production.cmf -z \
-  -Q18F47K42 -oC:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_3.o \
+  -pivt0x4008=04008h -cn -h+dist/default/debug\SecuritySystem.X.debug.sym \
+  --cmf=dist/default/debug\SecuritySystem.X.debug.cmf -z -Q18F47K42 \
+  -oC:\Users\osval\AppData\Local\Temp\xcAsmik.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
-  -Mdist/default/production/SecuritySystem.X.production.map \
-  --md=C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_0.dat -E1 \
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+  -Mdist/default/debug/SecuritySystem.X.debug.map \
+  --md=C:\Users\osval\AppData\Local\Temp\xcAsmik.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=02000h-020FFhx224,012000h-0120FFhx224 \
   -AMEDIUMCONST=02000h-0FFFFh,012000h-01FFFFh -ACOMRAM=01h-05Fh \
@@ -46,12 +34,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-<<<<<<< HEAD
-  C:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_9.o \
-=======
-  C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_9.o \
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
-  dist/default/production\SecuritySystem.X.production.o 
+  C:\Users\osval\AppData\Local\Temp\xcAsmik.\driver_tmp_9.o \
+  dist/default/debug\SecuritySystem.X.debug.o 
 
 Object code version is 3.11
 
@@ -60,88 +44,39 @@ Machine type is 18F47K42
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-<<<<<<< HEAD
-C:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_9.o
-=======
-C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_9.o
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+C:\Users\osval\AppData\Local\Temp\xcAsmik.\driver_tmp_9.o
                 config                           300000   300000        A        0       4
                 init                               40AE     40AE        4     2004       0
                 reset_vec                             0        0        4        0       0
-dist/default/production\SecuritySystem.X.production.o
+dist/default/debug\SecuritySystem.X.debug.o
                 config                           300000   300000        A        0       4
-<<<<<<< HEAD
-                smallconst                         2000     2000        8     1000       0
-                ivt0x4008                          4008     4008       A6     2004       0
-                text7                              41D0     41D0       70     1074       0
-                text6                              4308     4308       12     1074       0
-                text5                              42F6     42F6       12     1074       0
-                text4                              4286     4286       30     1074       0
-                text3                              4240     4240       46     1074       0
-                text2                              42B6     42B6       26     1074       0
-                text1                              40B2     40B2       A6     2004       0
-                text0                              4158     4158       76     2004       0
-                cstackCOMRAM                          1        1       15        1       1
-                cinit                              42DC     42DC       1A     1074       0
-=======
                 smallconst                         2000     2000        2     1000       0
                 ivt0x4008                          4008     4008       A6     2004       0
-                text7                              4220     4220       70     1088       0
-                text6                              4306     4306       1C     1088       0
-                text5                              4346     4346        A     1088       0
-                text4                              4334     4334       12     1088       0
-                text3                              42D6     42D6       30     1088       0
-                text2                              4290     4290       46     1088       0
-                text1                              40B2     40B2       D8     2004       0
-                text0                              418A     418A       94     2004       0
-                cstackCOMRAM                          1        1       16        1       1
-                cinit                              4322     4322       12     1088       0
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+                text2                              40B4     40B4       44     102D       0
+                text1                              412C     412C       12     102D       0
+                text0                              40F8     40F8       22     102D       0
+                cstackCOMRAM                          1        1        2        1       1
+                cinit                              411A     411A       12     102D       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
                 init                               40AE     40AE        4         0
                 reset_vec                             0        0        4         0
                 ivt0x4008                          4008     4008       A6         0
-<<<<<<< HEAD
-                text7                              41D0     41D0       70         0
-                text6                              4308     4308       12         0
-                text5                              42F6     42F6       12         0
-                text4                              4286     4286       30         0
-                text3                              4240     4240       46         0
-                text2                              42B6     42B6       26         0
-                text1                              40B2     40B2       A6         0
-                text0                              4158     4158       76         0
-                cinit                              42DC     42DC       1A         0
-=======
-                text7                              4220     4220       70         0
-                text6                              4306     4306       1C         0
-                text5                              4346     4346        A         0
-                text4                              4334     4334       12         0
-                text3                              42D6     42D6       30         0
-                text2                              4290     4290       46         0
-                text1                              40B2     40B2       D8         0
-                text0                              418A     418A       94         0
-                cinit                              4322     4322       12         0
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+                text2                              40B4     40B4       44         0
+                text1                              412C     412C       12         0
+                text0                              40F8     40F8       22         0
+                cinit                              411A     411A       12         0
 
         CLASS   CONST          
 
         CLASS   SMALLCONST     
-<<<<<<< HEAD
-                smallconst                         2000     2000        8         0
-=======
                 smallconst                         2000     2000        2         0
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-<<<<<<< HEAD
-                cstackCOMRAM                          1        1       15         1
-=======
-                cstackCOMRAM                          1        1       16         1
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+                cstackCOMRAM                          1        1        2         1
 
         CLASS   ABS1           
 
@@ -235,17 +170,10 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-<<<<<<< HEAD
-                cstackCOMRAM                   000001  000015  000016         1       1  COMRAM  
-                smallconst                     002000  000008  002008      1000       0  SMALLCON
-                ivt0x4008                      004008  0001C6  0041CE      2004       0  CODE    
-                text7                          0041D0  00014A  00431A      1074       0  CODE    
-=======
-                cstackCOMRAM                   000001  000016  000017         1       1  COMRAM  
+                cstackCOMRAM                   000001  000002  000003         1       1  COMRAM  
                 smallconst                     002000  000002  002002      1000       0  SMALLCON
-                ivt0x4008                      004008  000216  00421E      2004       0  CODE    
-                text7                          004220  000130  004350      1088       0  CODE    
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+                ivt0x4008                      004008  0000AA  0040B2      2004       0  CODE    
+                text2                          0040B4  00008A  00413E      102D       0  CODE    
 
 
 UNUSED ADDRESS RANGES
@@ -283,84 +211,50 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-<<<<<<< HEAD
-        BIGRAM           000016-001FFF             1FEA
-        BIGSFR           003800-003FFF              800
-        CODE             000004-001FFF             1FFC
-                         002008-004007             2000
-                         0041CE-0041CF                2
-                         00431A-01FFFF            1BCE6
-        COMRAM           000016-00005F               4A
-        CONST            000004-001FFF             1FFC
-                         002008-004007             2000
-                         0041CE-0041CF                2
-                         00431A-01FFFF            1BCE6
-        EEDATA           310000-3103FF              400
-        IDLOC            200000-20000F               10
-        MEDIUMCONST      002008-004007             2000
-                         0041CE-0041CF                2
-                         00431A-00FFFF             BCE6
-                         012000-01FFFF             E000
-        RAM              000060-001FFF              100
-        SFR              003800-003FFF              100
-        SMALLCONST       002008-004007              100
-                         0041CE-0041CF                2
-                         00431A-00FFFF              100
-=======
-        BIGRAM           000017-001FFF             1FE9
+        BIGRAM           000003-001FFF             1FFD
         BIGSFR           003800-003FFF              800
         CODE             000004-001FFF             1FFC
                          002002-004007             2006
-                         00421E-00421F                2
-                         004350-01FFFF            1BCB0
-        COMRAM           000017-00005F               49
+                         0040B2-0040B3                2
+                         00413E-01FFFF            1BEC2
+        COMRAM           000003-00005F               5D
         CONST            000004-001FFF             1FFC
                          002002-004007             2006
-                         00421E-00421F                2
-                         004350-01FFFF            1BCB0
+                         0040B2-0040B3                2
+                         00413E-01FFFF            1BEC2
         EEDATA           310000-3103FF              400
         IDLOC            200000-20000F               10
         MEDIUMCONST      002002-004007             2006
-                         00421E-00421F                2
-                         004350-00FFFF             BCB0
+                         0040B2-0040B3                2
+                         00413E-00FFFF             BEC2
                          012000-01FFFF             E000
         RAM              000060-001FFF              100
         SFR              003800-003FFF              100
         SMALLCONST       002002-004007              100
-                         00421E-00421F                2
-                         004350-00FFFF              100
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+                         0040B2-0040B3                2
+                         00413E-00FFFF              100
                          012000-01FFFF              100
 
                                   Symbol Table
 
-INT0_ISR@k                    cstackCOMRAM 000003
+INT0_ISR@k                    cstackCOMRAM 000001
 IVTBASEH                      (abs)        003FD6
 IVTBASEL                      (abs)        003FD5
 IVTBASEU                      (abs)        003FD7
 _ANSELB                       (abs)        003A50
 _ANSELD                       (abs)        003A70
-<<<<<<< HEAD
-_INT0_ISR                     text7        0041D0
+_INT0_ISR                     text2        0040B4
 _INTCON0bits                  (abs)        003FD2
-_INTERRUPT_Initialize         text6        004308
+_INTERRUPT_Initialize         text1        00412C
 _IPR1bits                     (abs)        003981
-=======
-_INT0_ISR                     text7        004220
-_INTCON0bits                  (abs)        003FD2
-_INTERRUPT_Initialize         text6        004306
-_IPR1bits                     (abs)        003981
-_IVTBASEH                     (abs)        003FD6
-_IVTBASEL                     (abs)        003FD5
-_IVTBASEU                     (abs)        003FD7
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 _PIE1bits                     (abs)        003991
 _PIR1bits                     (abs)        0039A1
 _PORTB                        (abs)        003FCB
-_PORTBbits                    (abs)        003FCB
 _PORTD                        (abs)        003FCD
+_PORTDbits                    (abs)        003FCD
 _TRISB                        (abs)        003FC3
 _TRISD                        (abs)        003FC5
+_WPUB                         (abs)        003A51
 __HRAM                        (abs)        000000
 __H__absolute__               __absolute__ 000000
 __Habs1                       abs1         000000
@@ -434,15 +328,9 @@ __Hrdata                      rdata        000000
 __Hreset_vec                  reset_vec    000004
 __Hrparam                     rparam       000000
 __Hsfr                        sfr          000000
-<<<<<<< HEAD
-__Hsmallconst                 smallconst   002008
-__Hspace_0                    (abs)        00431A
-__Hspace_1                    (abs)        000016
-=======
 __Hsmallconst                 smallconst   002002
-__Hspace_0                    (abs)        004350
-__Hspace_1                    (abs)        000017
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+__Hspace_0                    (abs)        00413E
+__Hspace_1                    (abs)        000003
 __Hspace_2                    (abs)        000000
 __Hspace_4                    (abs)        60000A
 __Hstack                      stack        000000
@@ -452,11 +340,6 @@ __Htext                       text         000000
 __Htext0                      text0        000000
 __Htext1                      text1        000000
 __Htext2                      text2        000000
-__Htext3                      text3        000000
-__Htext4                      text4        000000
-__Htext5                      text5        000000
-__Htext6                      text6        000000
-__Htext7                      text7        000000
 __LRAM                        (abs)        000001
 __L__absolute__               __absolute__ 000000
 __Labs1                       abs1         000000
@@ -542,18 +425,8 @@ __Ltext                       text         000000
 __Ltext0                      text0        000000
 __Ltext1                      text1        000000
 __Ltext2                      text2        000000
-__Ltext3                      text3        000000
-__Ltext4                      text4        000000
-__Ltext5                      text5        000000
-__Ltext6                      text6        000000
-__Ltext7                      text7        000000
-<<<<<<< HEAD
-__S0                          (abs)        00431A
-__S1                          (abs)        000016
-=======
-__S0                          (abs)        004350
-__S1                          (abs)        000017
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+__S0                          (abs)        00413E
+__S1                          (abs)        000003
 __S4                          (abs)        000000
 __S5                          (abs)        000000
 ___heap_hi                    (abs)        000000
@@ -570,81 +443,24 @@ ___sp                         stack        000000
 ___stack_hi                   stack        000000
 ___stack_lo                   stack        000000
 __accesstop                   (abs)        000060
-<<<<<<< HEAD
-__activetblptr                (abs)        000001
-__end_of_INT0_ISR             text7        004240
-__end_of_INTERRUPT_Initialize text6        00431A
-__end_of__initialization      cinit        0042E8
-__end_of_display_digit        text2        0042DC
-__end_of_init_ports           text5        004308
-__end_of_main                 text0        0041CE
-__end_of_play_buzzer_melody   text3        004286
-__end_of_read_input           text1        004158
-__end_of_wait                 text4        0042B6
-__end_ofdisplay_digit@F16363  smallconst   002006
-__initialization              cinit        0042DC
-__mediumconst                 smallconst   002000
-__pcinit                      cinit        0042DC
-__pcstackCOMRAM               cstackCOMRAM 000001
-__pivt0x4008                  ivt0x4008    004008
-__psmallconst                 smallconst   002000
-__ptext0                      text0        004158
-__ptext1                      text1        0040B2
-__ptext2                      text2        0042B6
-__ptext3                      text3        004240
-__ptext4                      text4        004286
-__ptext5                      text5        0042F6
-__ptext6                      text6        004308
-__ptext7                      text7        0041D0
-__ramtop                      ramtop       002000
-__smallconst                  smallconst   002000
-_display_digit                text2        0042B6
-_init_ports                   text5        0042F6
-_main                         text0        004158
-_play_buzzer_melody           text3        004240
-_read_input                   text1        0040B2
-_wait                         text4        004286
-display_digit@F16363          smallconst   002001
-display_digit@digit           cstackCOMRAM 00000A
-display_digit@seg_code        cstackCOMRAM 000005
-end_of_initialization         cinit        0042E8
-=======
 __activetblptr                (abs)        000000
-__end_of_INT0_ISR             text7        004290
-__end_of_INTERRUPT_Initialize text6        004322
-__end_of__initialization      cinit        00432E
-__end_of_display_digit        text5        004350
-__end_of_init_ports           text4        004346
-__end_of_main                 text0        00421E
-__end_of_play_buzzer_melody   text2        0042D6
-__end_of_read_input           text1        00418A
-__end_of_wait                 text3        004306
-__initialization              cinit        004322
+__end_of_INT0_ISR             text2        0040F8
+__end_of_INTERRUPT_Initialize text1        00413E
+__end_of__initialization      cinit        004126
+__end_of_main                 text0        00411A
+__initialization              cinit        00411A
 __mediumconst                 smallconst   002000
-__pcinit                      cinit        004322
+__pcinit                      cinit        00411A
 __pcstackCOMRAM               cstackCOMRAM 000001
 __pivt0x4008                  ivt0x4008    004008
 __psmallconst                 smallconst   002000
-__ptext0                      text0        00418A
-__ptext1                      text1        0040B2
-__ptext2                      text2        004290
-__ptext3                      text3        0042D6
-__ptext4                      text4        004334
-__ptext5                      text5        004346
-__ptext6                      text6        004306
-__ptext7                      text7        004220
+__ptext0                      text0        0040F8
+__ptext1                      text1        00412C
+__ptext2                      text2        0040B4
 __ramtop                      ramtop       002000
 __smallconst                  smallconst   002000
-_display_digit                text5        004346
-_init_ports                   text4        004334
-_main                         text0        00418A
-_play_buzzer_melody           text2        004290
-_read_input                   text1        0040B2
-_read_input$202               cstackCOMRAM 00000F
-_wait                         text3        0042D6
-display_digit@digit           cstackCOMRAM 000005
-end_of_initialization         cinit        00432E
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
+_main                         text0        0040F8
+end_of_initialization         cinit        004126
 intlevel0                     text         000000
 intlevel1                     text         000000
 intlevel2                     text         000000
@@ -653,92 +469,24 @@ isa$std                       (abs)        000001
 isa$xinst                     (abs)        000000
 ivt0x4008_base                ivt0x4008    004008
 ivt0x4008_undefint            ivt0x4008    0040AC
-<<<<<<< HEAD
-main@code_entered             cstackCOMRAM 000015
-main@first_input              cstackCOMRAM 000013
-main@second_input             cstackCOMRAM 000014
-play_buzzer_melody@i          cstackCOMRAM 000009
-read_input@count              cstackCOMRAM 000010
-read_input@curr_state         cstackCOMRAM 00000F
-read_input@inputPinBit        cstackCOMRAM 00000D
-read_input@prev_state         cstackCOMRAM 00000E
 stackhi                       (abs)        000000
 stacklo                       (abs)        000000
 start                         init         0040AE
-start_initialization          cinit        0042DC
-=======
-main@code_entered             cstackCOMRAM 000014
-main@first_input              cstackCOMRAM 000015
-main@second_input             cstackCOMRAM 000016
-play_buzzer_melody@i          cstackCOMRAM 000009
-read_input@count              cstackCOMRAM 000013
-read_input@current_state      cstackCOMRAM 000012
-read_input@elapsed            cstackCOMRAM 00000D
-read_input@last_state         cstackCOMRAM 000011
-read_input@pr_input           cstackCOMRAM 00000C
-read_input@timeout            cstackCOMRAM 00000A
-stackhi                       (abs)        000000
-stacklo                       (abs)        000000
-start                         init         0040AE
-start_initialization          cinit        004322
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
-wait@i                        cstackCOMRAM 000007
-wait@ms                       cstackCOMRAM 000005
+start_initialization          cinit        00411A
 
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-<<<<<<< HEAD
-MainCode.c
-		_main          		CODE           	4158	0000	118
+lab11.c
+		_main          		CODE           	40F8	0000	34
+		_INTERRUPT_Initialize		CODE           	412C	0000	18
+		_INT0_ISR      		CODE           	40B4	0000	68
 
-MainCode.c estimated size: 118
-
-./init.h
-		_init_ports    		CODE           	42F6	0000	18
-		_INTERRUPT_Initialize		CODE           	4308	0000	18
-
-./init.h estimated size: 36
-
-./functions.h
-		_display_digit 		CODE           	42B6	0000	38
-		_read_input    		CODE           	40B2	0000	166
-		_play_buzzer_melody		CODE           	4240	0000	70
-		_INT0_ISR      		CODE           	41D0	0000	112
-		_wait          		CODE           	4286	0000	48
-
-./functions.h estimated size: 434
+lab11.c estimated size: 120
 
 shared
-		__initialization		CODE           	42DC	0000	12
-		display_digit@F16363		SMALLCONST     	2001	0000	5
-
-shared estimated size: 17
-=======
-./init.h
-		_init_ports    		CODE           	4334	0000	18
-		_INTERRUPT_Initialize		CODE           	4306	0000	28
-
-./init.h estimated size: 46
-
-./functions.h
-		_display_digit 		CODE           	4346	0000	10
-		_read_input    		CODE           	40B2	0000	216
-		_play_buzzer_melody		CODE           	4290	0000	70
-		_INT0_ISR      		CODE           	4220	0000	112
-		_wait          		CODE           	42D6	0000	48
-
-./functions.h estimated size: 456
-
-shared
-		__initialization		CODE           	4322	0000	12
+		__initialization		CODE           	411A	0000	12
 
 shared estimated size: 12
-
-SystemMainCode.c
-		_main          		CODE           	418A	0000	148
-
-SystemMainCode.c estimated size: 148
->>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 

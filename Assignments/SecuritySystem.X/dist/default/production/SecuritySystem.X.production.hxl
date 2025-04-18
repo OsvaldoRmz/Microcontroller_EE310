@@ -1,7 +1,11 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
+<<<<<<< HEAD
  C:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_3.o
+=======
+ C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_3.o
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
  -Odist/default/production\SecuritySystem.X.production.hex
  -logfile=dist/default/production\SecuritySystem.X.production.hxl
  -addressing=1
@@ -9,6 +13,7 @@
 
 ### Memory Usage ###
  Input file ranges:
+<<<<<<< HEAD
   0h - 3h		(C:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_3.o)
   2000h - 2006h		(C:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_3.o)
   4008h - 41CDh		(C:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_3.o)
@@ -19,17 +24,37 @@
   2007h - 4007h
   41CEh - 41CFh
   431Ah - 2FFFFFh
+=======
+  0h - 3h		(C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_3.o)
+  2000h - 2001h		(C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_3.o)
+  4008h - 421Dh		(C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_3.o)
+  4220h - 434Fh		(C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_3.o)
+  300000h - 300009h		(C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_3.o)
+ Unused ranges:
+  4h - 1FFFh
+  2002h - 4007h
+  421Eh - 421Fh
+  4350h - 2FFFFFh
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
+<<<<<<< HEAD
   H1 = Input file             (C:\Users\osval\AppData\Local\Temp\xcAspsk.\driver_tmp_3.o)
+=======
+  H1 = Input file             (C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_3.o)
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
 00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
+<<<<<<< HEAD
 00002000 | H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- --
+=======
+00002000 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 ----------------------------------------------------------
 00004000 | -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
 00004010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -59,12 +84,20 @@
 00004190 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000041A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000041B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+<<<<<<< HEAD
 000041C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
+=======
+000041C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 000041D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000041E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000041F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00004200 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+<<<<<<< HEAD
 00004210 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+=======
+00004210 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 00004220 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00004230 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00004240 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -80,7 +113,14 @@
 000042E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000042F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00004300 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+<<<<<<< HEAD
 00004310 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+=======
+00004310 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004320 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004330 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00004340 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 ----------------------------------------------------------
 00300000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
 00300010 | --

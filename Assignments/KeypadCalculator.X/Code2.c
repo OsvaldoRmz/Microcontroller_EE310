@@ -1,31 +1,5 @@
 
 
-/*
- * ---------------------
- * Title: KeyPad Calculator
- * ---------------------
- * Program Details:
- *  This program acts as a calculator which receives two inputs and either adds/subtracts/multiplies/divides them based on the arithmetic operation entered, it also has a clear option that resets the calculator
- * Inputs: PORTB (KeyPad)
- 
- *
- * Outputs: PORTD (LEDs)
- *
- * Setup: C- Simulator
- * Date: April 4th, 2025
- * File Dependencies / Libraries: #include <stdio.h> #include <stdlib.h> #include <math.h> #include <xc.h> #include "C:\Program Files\Microchip\xc8\v3.00\pic\include\proc\pic18f47k42.h"
-#include "C:\Users\osval\MPLABXProjects\Calculator.X\newxc8_header.h"
-#include "C:\Users\osval\MPLABXProjects\KeypadCalculator.X\newxc8_header.h"
- * Compiler: xc8, 3.0
- * Author: Osvaldo Ramirez
- * Versions:
- *      V1.0: Original Code
- * Useful links:  
- *      Datasheet: https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18(L)F26-27-45-46-47-55-56-57K42-Data-Sheet-40001919G.pdf
- *      PIC18F Instruction Sets: https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119448457.app4
- *      List of Instrcutions: http://143.110.227.210/faridfarahmand/sonoma/courses/es310/resources/20140217124422790.pdf
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -38,15 +12,14 @@
 #define _XTAL_FREQ 4000000 // Fosc frequency for delay library
 #define FCY (_XTAL_FREQ / 4)
 
-unsigned int Display_Result_REG = 0;
-unsigned int X_Input_REG = 0;
-unsigned int Y_Input_REG = 0;
+unsigned int result = 0;
+unsigned int number = 0;
+unsigned int number1 = 0;
 char key = 0;
 char key1 = 0;
 int digitCount = 0;
-int Operation_REG = 0;
+int arithmetic = 0;
 char test = 0;
-
 
 void init_keypad(){
     LATD = 0b00000000;
@@ -74,7 +47,7 @@ char get_keypad_input() {
     if (PORTBbits.RB7) key = '1';
     else if (PORTBbits.RB6) key = '4';
     else if (PORTBbits.RB5) key = '7';
-    else if (PORTBbits.RB4) key = '*'; //clear
+    else if (PORTBbits.RB4) key = '*';
     LATBbits.LATB3 = 0;
 
     // === Check Column 2 (connected to RB2) ===
@@ -90,15 +63,15 @@ char get_keypad_input() {
     if (PORTBbits.RB7) key = '3';
     else if (PORTBbits.RB6) key = '6';
     else if (PORTBbits.RB5) key = '9';
-    else if (PORTBbits.RB4) key = '#'; //equals to
+    else if (PORTBbits.RB4) key = '#';
     LATBbits.LATB1 = 0;
 
     // === Check Column 4 (connected to RB0) ===
     LATBbits.LATB0 = 1;
-    if (PORTBbits.RB7) key = 'A'; //addition
-    else if (PORTBbits.RB6) key = 'B'; //subtraction
-    else if (PORTBbits.RB5) key = 'C'; //multiplication
-    else if (PORTBbits.RB4) key = 'D'; //division
+    if (PORTBbits.RB7) key = 'A';
+    else if (PORTBbits.RB6) key = 'B';
+    else if (PORTBbits.RB5) key = 'C';
+    else if (PORTBbits.RB4) key = 'D';
     LATBbits.LATB0 = 0;
 
     // Debounce and wait for release if a key was pressed
@@ -106,7 +79,7 @@ char get_keypad_input() {
         __delay_ms(20); // debounce delay
         // Wait for all row inputs to be released
         while (PORTBbits.RB7 || PORTBbits.RB6 || PORTBbits.RB5 || PORTBbits.RB4);
-        __delay_ms(20); // debounce release delay//
+        __delay_ms(20); // debounce release delay
     }
 
     return key;
@@ -121,39 +94,38 @@ char get_keypad_input() {
 
 
 unsigned int math(){
-        if (Operation_REG == 'A')
-        return (X_Input_REG + Y_Input_REG);
-        else if (Operation_REG == 'B')
-        return (X_Input_REG - Y_Input_REG);
-        else if (Operation_REG == 'C')
-        return (X_Input_REG * Y_Input_REG);
-        else if (Operation_REG == 'D')
-        return (X_Input_REG / Y_Input_REG);
+        if (arithmetic == 'A')
+        return (number + number1);
+        else if (arithmetic == 'B')
+        return (number - number1);
+        else if (arithmetic == 'C')
+        return (number * number1);
+        else if (arithmetic == 'D')
+        return (number / number1);
 }
-//Reset all variables and Output
+
 void clear() {
     if (key == '*' || key1 == '*') {
         PORTD = 0;
         digitCount = 0;
-        X_Input_REG = 0;
+        number = 0;
         key = 0;
         key1 = 0;
-        Y_Input_REG = 0;
-        Operation_REG = 0;
-        Display_Result_REG = 0;
-       
+        number1 = 0;
+        arithmetic = 0;
+        result = 0;
     }
 }
 
  void main(void) {
-     restart: //restart loop
-     clear(); //clear command 
+     restart:
+     clear();
     init_keypad();
 
     while (1) {
-        X_Input_REG = 0;
-        Y_Input_REG = 0;
-        Display_Result_REG = 0;
+        number = 0;
+        number1 = 0;
+        result = 0;
         digitCount = 0;
         PORTD = 0;
 
@@ -161,23 +133,23 @@ void clear() {
         while (digitCount < 2) {
             key = get_keypad_input();
             if (key >= '0' && key <= '9') {
-                X_Input_REG = X_Input_REG * 10 + (key - '0');
+                number = number * 10 + (key - '0');
                 digitCount++;
                 __delay_ms(300);  // debounce
             } else if (key == '*') {
-                goto restart; // reset if * is pressed
+                clear();
                 continue;
             }
         }
 
-        PORTD = 1; // First number entered indication
+        PORTD = 1; // ? First number entered
 
         // --- Operator ---
         do {
-            Operation_REG = get_keypad_input();
-            if (Operation_REG == '*')
+            arithmetic = get_keypad_input();
+            if (arithmetic == '*')
                 goto restart;
-        } while (Operation_REG != 'A' && Operation_REG != 'B' && Operation_REG != 'C' && Operation_REG != 'D'); //checks for arithmetic operation
+        } while (arithmetic != 'A' && arithmetic != 'B' && arithmetic != 'C' && arithmetic != 'D');
 
         digitCount = 0;
 
@@ -185,16 +157,16 @@ void clear() {
         while (digitCount < 2) {
             key1 = get_keypad_input();
             if (key1 >= '0' && key1 <= '9') {
-                Y_Input_REG = Y_Input_REG * 10 + (key1 - '0');
+                number1 = number1 * 10 + (key1 - '0');
                 digitCount++;
-               __delay_ms(300);  // debounce
+                __delay_ms(300);  // debounce
             } else if (key1 == '*') {
-                goto restart;
+                clear();
                 continue;
             }
         }
 
-        PORTD = 2; // Second number entered indication
+        PORTD = 2; // ? Second number entered
 
         // --- Wait for # or * ---
         do {
@@ -202,8 +174,11 @@ void clear() {
         } while (test != '#' && test != '*');
 
         if (test == '#') {
-            Display_Result_REG = math(); // do the calculation
-            PORTD = Display_Result_REG; //show results on leds
+            result = math();
+      
+           
+           
+            PORTD = result;
         } else if (test == '*') {
             goto restart;
         }
@@ -211,3 +186,6 @@ void clear() {
         __delay_ms(4000); // Short pause before loop restarts
     }
 }
+
+
+

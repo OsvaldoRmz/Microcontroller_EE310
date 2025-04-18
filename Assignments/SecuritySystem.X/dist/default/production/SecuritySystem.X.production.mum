@@ -1,7 +1,12 @@
 
 18F47K42 Memory Summary:
+<<<<<<< HEAD
     Program space        used   31Ch (   796) of 20000h bytes   (  0.6%)
     Data space           used    15h (    21) of  2000h bytes   (  0.3%)
+=======
+    Program space        used   34Ch (   844) of 20000h bytes   (  0.6%)
+    Data space           used    16h (    22) of  2000h bytes   (  0.3%)
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
     Configuration bits   used     5h (     5) of     5h words   (100.0%)
     EEPROM space         used     0h (     0) of   400h bytes   (  0.0%)
     ID Location space    used     0h (     0) of    10h bytes   (  0.0%)

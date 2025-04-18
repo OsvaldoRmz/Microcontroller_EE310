@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 __S0 431A 0 ABS 0
 __S1 16 0 ABS 0
 __S4 0 0 ABS 0
@@ -6,6 +7,17 @@ main@code_entered 15 0 COMRAM 1
 _main 4158 0 CODE 0
 ___sp 0 0 STACK 2
 _wait 4286 0 CODE 0
+=======
+__S0 4350 0 ABS 0
+__S1 17 0 ABS 0
+__S4 0 0 ABS 0
+__S5 0 0 ABS 0
+read_input@current_state 12 0 COMRAM 1
+main@code_entered 14 0 COMRAM 1
+_main 418A 0 CODE 0
+___sp 0 0 STACK 2
+_wait 42D6 0 CODE 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 start 40AE 0 CODE 0
 _TRISB 3FC3 0 ABS 0
 _TRISD 3FC5 0 ABS 0
@@ -17,7 +29,10 @@ _PORTD 3FCD 0 ABS 0
 __LRAM 1 0 ABS 0
 __Hconfig 30000A 0 CONFIG 4
 __Lconfig 0 0 CONFIG 4
+<<<<<<< HEAD
 display_digit@seg_code 5 0 COMRAM 1
+=======
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 wait@i 7 0 COMRAM 1
 ___inthi_stack_hi 0 0 STACK 2
 __Hbigram 0 0 ABS 0
@@ -69,8 +84,13 @@ __Labs1 0 0 ABS 0
 isa$xinst 0 0 ABS 0
 __HnvFARRAM 0 0 FARRAM 0
 __LnvFARRAM 0 0 FARRAM 0
+<<<<<<< HEAD
 ___heap_hi 0 0 ABS 0
 read_input@inputPinBit D 0 COMRAM 1
+=======
+_read_input$202 F 0 COMRAM 1
+___heap_hi 0 0 ABS 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
 isa$std 1 0 ABS 0
@@ -86,6 +106,7 @@ __Lrbit 0 0 COMRAM 1
 __Hinit 40B2 0 CODE 0
 __Linit 40AE 0 CODE 0
 __Hrbss 0 0 COMRAM 1
+<<<<<<< HEAD
 __end_of_main 41CE 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __end_of_init_ports 4308 0 CODE 0
@@ -97,14 +118,33 @@ ___heap_lo 0 0 ABS 0
 end_of_initialization 42E8 0 CODE 0
 _PORTBbits 3FCB 0 ABS 0
 __end_of_read_input 4158 0 CODE 0
+=======
+__end_of_main 421E 0 CODE 0
+__Lrbss 0 0 COMRAM 1
+__end_of_init_ports 4346 0 CODE 0
+__Htext 0 0 ABS 0
+__Ltext 0 0 ABS 0
+__end_of_INTERRUPT_Initialize 4322 0 CODE 0
+__end_of_display_digit 4350 0 CODE 0
+___heap_lo 0 0 ABS 0
+end_of_initialization 432E 0 CODE 0
+_PORTBbits 3FCB 0 ABS 0
+__end_of_read_input 418A 0 CODE 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 IVTBASEH 3FD6 0 ABS 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 IVTBASEL 3FD5 0 ABS 0
+<<<<<<< HEAD
 read_input@curr_state F 0 COMRAM 1
 __Hifardata 0 0 CODE 0
 __Lifardata 0 0 CODE 0
 read_input@count 10 0 COMRAM 1
+=======
+__Hifardata 0 0 CODE 0
+__Lifardata 0 0 CODE 0
+read_input@count 13 0 COMRAM 1
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Hbank0 0 0 ABS 0
 __Lbank0 0 0 ABS 0
 __Hbank1 0 0 ABS 0
@@ -133,12 +173,17 @@ __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
+<<<<<<< HEAD
 __ptext0 4158 0 CODE 0
+=======
+__ptext0 418A 0 CODE 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Htext2 0 0 ABS 0
 __Ltext2 0 0 ABS 0
 __ptext1 40B2 0 CODE 0
 __Htext3 0 0 ABS 0
 __Ltext3 0 0 ABS 0
+<<<<<<< HEAD
 __ptext2 42B6 0 CODE 0
 __Htext4 0 0 ABS 0
 __Ltext4 0 0 ABS 0
@@ -159,6 +204,28 @@ __Lclrtext 0 0 ABS 0
 __end_of__initialization 42E8 0 CODE 0
 ___rparam_used 1 0 ABS 0
 main@second_input 14 0 COMRAM 1
+=======
+__ptext2 4290 0 CODE 0
+__Htext4 0 0 ABS 0
+__Ltext4 0 0 ABS 0
+__ptext3 42D6 0 CODE 0
+___stack_hi 0 0 STACK 2
+__Htext5 0 0 ABS 0
+__Ltext5 0 0 ABS 0
+__ptext4 4334 0 CODE 0
+__Htext6 0 0 ABS 0
+__Ltext6 0 0 ABS 0
+__ptext5 4346 0 CODE 0
+__Htext7 0 0 ABS 0
+__Ltext7 0 0 ABS 0
+__ptext6 4306 0 CODE 0
+__ptext7 4220 0 CODE 0
+__Hclrtext 0 0 ABS 0
+__Lclrtext 0 0 ABS 0
+__end_of__initialization 432E 0 CODE 0
+___rparam_used 1 0 ABS 0
+main@second_input 16 0 COMRAM 1
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __H__absolute__ 0 0 ABS 0
 __L__absolute__ 0 0 ABS 0
 __Hidata 0 0 CODE 0
@@ -166,29 +233,48 @@ __Lidata 0 0 CODE 0
 __Hrdata 0 0 COMRAM 1
 __Lrdata 0 0 COMRAM 1
 __Hidloc 0 0 ABS 0
+<<<<<<< HEAD
 __end_of_play_buzzer_melody 4286 0 CODE 0
+=======
+__end_of_play_buzzer_melody 42D6 0 CODE 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Lidloc 0 0 ABS 0
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 __Hparam 0 0 COMRAM 1
 __Lparam 0 0 COMRAM 1
+<<<<<<< HEAD
 __Hspace_0 431A 0 ABS 0
+=======
+__Hspace_0 4350 0 ABS 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __HcstackCOMRAM 0 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
 __pcstackCOMRAM 1 0 COMRAM 1
+<<<<<<< HEAD
 __Hspace_1 16 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hsmallconst 2008 0 SMALLCONST 0
+=======
+__Hspace_1 17 0 ABS 0
+__Lspace_1 0 0 ABS 0
+__Hsmallconst 2002 0 SMALLCONST 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Lsmallconst 2000 0 SMALLCONST 0
 __psmallconst 2000 0 SMALLCONST 0
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
+<<<<<<< HEAD
 display_digit@digit A 0 COMRAM 1
+=======
+display_digit@digit 5 0 COMRAM 1
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Hnvbit 0 0 COMRAM 1
 __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 __Lcinit 0 0 ABS 0
+<<<<<<< HEAD
 __pcinit 42DC 0 CODE 0
 __ramtop 2000 0 RAM 0
 __mediumconst 2000 0 SMALLCONST 0
@@ -196,6 +282,16 @@ _play_buzzer_melody 4240 0 CODE 0
 __Hconst 0 0 CONST 0
 __Lconst 0 0 CONST 0
 __Hspace_4 60000A 0 ABS 0
+=======
+__pcinit 4322 0 CODE 0
+__ramtop 2000 0 RAM 0
+__mediumconst 2000 0 SMALLCONST 0
+_play_buzzer_melody 4290 0 CODE 0
+__Hconst 0 0 CONST 0
+__Lconst 0 0 CONST 0
+__Hspace_4 60000A 0 ABS 0
+read_input@pr_input C 0 COMRAM 1
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Lspace_4 0 0 ABS 0
 ___stack_lo 0 0 STACK 2
 __Hbank10 0 0 ABS 0
@@ -217,7 +313,11 @@ __Lbank22 0 0 ABS 0
 __Hbank13 0 0 ABS 0
 __Lbank13 0 0 ABS 0
 __Hbank23 0 0 ABS 0
+<<<<<<< HEAD
 _INTERRUPT_Initialize 4308 0 CODE 0
+=======
+_INTERRUPT_Initialize 4306 0 CODE 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Lbank23 0 0 ABS 0
 __Hbank14 0 0 ABS 0
 __Lbank14 0 0 ABS 0
@@ -239,11 +339,16 @@ __Hbank18 0 0 ABS 0
 __Lbank18 0 0 ABS 0
 __Hbank28 0 0 ABS 0
 __Lbank28 0 0 ABS 0
+<<<<<<< HEAD
+=======
+read_input@timeout A 0 COMRAM 1
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
 __Hbank19 0 0 ABS 0
 __Lbank19 0 0 ABS 0
 __Hbank29 0 0 ABS 0
 __Lbank29 0 0 ABS 0
 ___inthi_sp 0 0 STACK 2
+<<<<<<< HEAD
 display_digit@F16363 2001 0 SMALLCONST 0
 ___intlo_sp 0 0 STACK 2
 __Hivt0x4008 40AE 0 CODE 0
@@ -380,3 +485,148 @@ MainCode.c
 68 4238 0 CODE 0
 69 423C 0 CODE 0
 71 423E 0 CODE 0
+=======
+___intlo_sp 0 0 STACK 2
+__Hivt0x4008 40AE 0 CODE 0
+__Livt0x4008 4008 0 CODE 0
+main@first_input 15 0 COMRAM 1
+__pivt0x4008 4008 0 CODE 0
+_IVTBASEH 3FD6 0 ABS 0
+__smallconst 2000 0 SMALLCONST 0
+__Hreset_vec 4 0 CODE 0
+__Lreset_vec 0 0 CODE 0
+_IVTBASEL 3FD5 0 ABS 0
+read_input@elapsed D 0 COMRAM 1
+__accesstop 60 0 ABS 0
+__end_of_INT0_ISR 4290 0 CODE 0
+intlevel0 0 0 CODE 0
+intlevel1 0 0 CODE 0
+intlevel2 0 0 CODE 0
+_IVTBASEU 3FD7 0 ABS 0
+intlevel3 0 0 CODE 0
+_display_digit 4346 0 CODE 0
+_INT0_ISR 4220 0 CODE 0
+___inthi_stack_lo 0 0 STACK 2
+start_initialization 4322 0 CODE 0
+___intlo_stack_lo 0 0 STACK 2
+_init_ports 4334 0 CODE 0
+_read_input 40B2 0 CODE 0
+__end_of_wait 4306 0 CODE 0
+INT0_ISR@k 3 0 COMRAM 1
+read_input@last_state 11 0 COMRAM 1
+__initialization 4322 0 CODE 0
+__activetblptr 0 0 ABS 0
+%segments
+ivt0x4008 4008 421D CODE 4008 0
+reset_vec 0 3 CODE 0 0
+smallconst 2000 2001 SMALLCONST 2000 0
+cstackCOMRAM 1 16 COMRAM 1 1
+text7 4220 434F CODE 4220 0
+%locals
+dist/default/production\SecuritySystem.X.production.o
+C:\Users\osval\AppData\Local\Temp\xcAsm6o.\driver_tmp_1.s
+1678 4322 0 CODE 0
+1680 4322 0 CODE 0
+1683 4322 0 CODE 0
+1691 4322 0 CODE 0
+1692 4324 0 CODE 0
+1693 4326 0 CODE 0
+1694 4328 0 CODE 0
+1695 432A 0 CODE 0
+1696 432C 0 CODE 0
+1702 432E 0 CODE 0
+1704 432E 0 CODE 0
+1705 4330 0 CODE 0
+SystemMainCode.c
+15 418A 0 CODE 0
+16 418A 0 CODE 0
+17 418E 0 CODE 0
+29 4192 0 CODE 0
+30 419A 0 CODE 0
+31 41A0 0 CODE 0
+34 41AC 0 CODE 0
+38 41B0 0 CODE 0
+34 41B8 0 CODE 0
+39 41C6 0 CODE 0
+40 41CC 0 CODE 0
+42 41D8 0 CODE 0
+44 41E0 0 CODE 0
+46 41F2 0 CODE 0
+47 41F4 0 CODE 0
+48 4200 0 CODE 0
+49 4202 0 CODE 0
+51 420E 0 CODE 0
+53 4212 0 CODE 0
+./functions.h
+17 40B2 0 CODE 0
+18 40B4 0 CODE 0
+19 40B6 0 CODE 0
+20 40BA 0 CODE 0
+21 40C2 0 CODE 0
+23 40CA 0 CODE 0
+24 40CE 0 CODE 0
+26 411A 0 CODE 0
+27 413A 0 CODE 0
+28 413C 0 CODE 0
+31 4148 0 CODE 0
+32 414C 0 CODE 0
+33 4158 0 CODE 0
+23 4160 0 CODE 0
+36 4186 0 CODE 0
+37 4188 0 CODE 0
+./functions.h
+45 4290 0 CODE 0
+46 4290 0 CODE 0
+47 4298 0 CODE 0
+48 429A 0 CODE 0
+49 42A6 0 CODE 0
+50 42A8 0 CODE 0
+51 42B4 0 CODE 0
+52 42D4 0 CODE 0
+./functions.h
+10 42D6 0 CODE 0
+11 42D6 0 CODE 0
+12 42E2 0 CODE 0
+13 42EA 0 CODE 0
+14 4304 0 CODE 0
+./init.h
+35 4334 0 CODE 0
+36 4334 0 CODE 0
+37 4338 0 CODE 0
+38 433A 0 CODE 0
+40 433C 0 CODE 0
+41 433E 0 CODE 0
+42 4342 0 CODE 0
+43 4344 0 CODE 0
+./functions.h
+40 4346 0 CODE 0
+41 4348 0 CODE 0
+42 434E 0 CODE 0
+./init.h
+21 4306 0 CODE 0
+22 4306 0 CODE 0
+23 4308 0 CODE 0
+24 430A 0 CODE 0
+25 430C 0 CODE 0
+26 430E 0 CODE 0
+27 4312 0 CODE 0
+28 4314 0 CODE 0
+30 4316 0 CODE 0
+31 4318 0 CODE 0
+32 431C 0 CODE 0
+33 4320 0 CODE 0
+./init.h
+33 4220 0 CODE 0
+./functions.h
+55 4220 0 CODE 0
+56 4220 0 CODE 0
+57 4230 0 CODE 0
+58 4238 0 CODE 0
+59 423A 0 CODE 0
+60 4250 0 CODE 0
+61 4252 0 CODE 0
+62 4268 0 CODE 0
+63 4288 0 CODE 0
+64 428C 0 CODE 0
+66 428E 0 CODE 0
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
