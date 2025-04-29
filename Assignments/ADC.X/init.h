@@ -18,22 +18,23 @@ void INTERRUPT_Initialize(void);
 
 #define LCD_Port TRISB              
 #define LCD_Control TRISD
-#define EMERGENCY_FLAG IOCCFbits.IOCCF1
+#define EMERGENCY_FLAG IOCCFbits.IOCCF2
 #define LED PORTDbits.RD3
 
 void INTERRUPT_Initialize(void) {
-TRISCbits.TRISC1 = 1;  // RC1 as input
-ANSELCbits.ANSELC1 = 0; // Digital input
-IOCCNbits.IOCCN1 = 0;  // No Negative edge
-IOCCPbits.IOCCP1 = 1;  //  positive edge
+TRISCbits.TRISC2 = 1;  // RC1 as input
+ANSELCbits.ANSELC2 = 0; // Digital input
+IOCCNbits.IOCCN2 = 0;  // No Negative edge
+IOCCPbits.IOCCP2 = 1;  //  positive edge
 
 //IPR0bits.IOCIP = 1;
-IOCCFbits.IOCCF1 = 0;  // Clear interrupt flag
+IOCCFbits.IOCCF2 = 0;  // Clear interrupt flag
 PIR0bits.IOCIF = 0; // Clear flag
 PIE0bits.IOCIE = 1;  // Enable IOC interrupts
 INTCON0bits.GIEL = 1;
 INTCON0bits.GIEH = 1;    // Enable global interrupt
 INTCON0bits.IPEN = 1; // Enable Priority
+
   
 }
 
