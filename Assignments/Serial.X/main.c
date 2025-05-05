@@ -1,37 +1,28 @@
- /*
- * MAIN Generated Driver File
- * 
- * @file main.c
- * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
- *
- * @version MAIN Driver Version 1.0.2
- *
- * @version Package Version: 3.1.2
-*/
+ //Title: Serial Interface
+// * ---------------------
+// * Program Details:
+// * This program generates a random number every second up to 100 times and prints it to a serial interface to be able to be monitered
+ 
+// * Inputs: Rx2(rd1)
+// * Outputs: Tx2(rd0)
+// *
+// * Setup: C- Simulator
+// * Date: May 5th, 2025
+// * File Dependencies / Libraries: 
 
-/*
-© [2025] Microchip Technology Inc. and its subsidiaries.
-
-    Subject to your compliance with these terms, you may use Microchip 
-    software and any derivatives exclusively with Microchip products. 
-    You are responsible for complying with 3rd party license terms  
-    applicable to your use of 3rd party software (including open source  
-    software) that may accompany Microchip software. SOFTWARE IS ?AS IS.? 
-    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS 
-    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,  
-    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT 
-    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY 
-    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF 
-    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE 
-    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP?S 
-    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT 
-    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
-    THIS SOFTWARE.
-*/
+//#include "C:\Program Files\Microchip\xc8\v3.00\pic\include\proc\pic18f47k42.h"
+//#include "C:\Program Files\Microchip\xc8\v2.40\pic\include\proc\pic18f46k42"
+//#include "C:\Users\osval\MPLABXProjects\Calculator.X\newxc8_header.h"
+//#include "C:\Users\osval\MPLABXProjects\KeypadCalculator.X\newxc8_header.h"
+// * Compiler: xc8, 3.0
+// * Author: Osvaldo Ramirez
+// * Versions:
+// *      V1.0: Original Code
+// * Useful links:  
+// *      Datasheet: https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18(L)F26-27-45-46-47-55-56-57K42-Data-Sheet-40001919G.pdf
+// *      PIC18F Instruction Sets: https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119448457.app4
+// *      List of Instrcutions: http://143.110.227.210/faridfarahmand/sonoma/courses/es310/resources/20140217124422790.pdf
+// */
 #include <xc.h>
 #include <stdio.h>
 #include <stdlib.h>
