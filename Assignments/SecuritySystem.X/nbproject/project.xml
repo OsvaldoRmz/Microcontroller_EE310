@@ -4,7 +4,11 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>SecuritySystem</name>
+<<<<<<< HEAD
+            <creation-uuid>bfd556ca-d931-4962-92d7-c049590f8854</creation-uuid>
+=======
             <creation-uuid>7769c9a7-8255-4dce-b2dd-043b2260f0af</creation-uuid>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>

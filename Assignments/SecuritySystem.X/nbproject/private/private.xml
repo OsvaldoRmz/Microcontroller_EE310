@@ -3,12 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/config.h</file>
+            <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/init.h</file>
+            <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/functions.h</file>
+            <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/MainCode.c</file>
+=======
             <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/lab11.c</file>
             <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/SystemMainCode.c</file>
             <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/functions.h</file>
             <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/config.h</file>
             <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/init.h</file>
             <file>file:/C:/Users/osval/MPLABXProjects/SecuritySystem.X/Makefile</file>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
         </group>
     </open-files>
 </project-private>

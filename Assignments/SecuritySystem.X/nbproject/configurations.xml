@@ -4,8 +4,13 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+<<<<<<< HEAD
+      <itemPath>config.h</itemPath>
+      <itemPath>init.h</itemPath>
+=======
       <itemPath>init.h</itemPath>
       <itemPath>config.h</itemPath>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
       <itemPath>functions.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -20,8 +25,12 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+<<<<<<< HEAD
+      <itemPath>MainCode.c</itemPath>
+=======
       <itemPath>SystemMainCode.c</itemPath>
       <itemPath>lab11.c</itemPath>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -38,7 +47,11 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
+<<<<<<< HEAD
+        <pack name="PIC18F-K_DFP" vendor="Microchip" version="1.13.292"/>
+=======
         <pack name="PIC18F-K_DFP" vendor="Microchip" version="1.14.301"/>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -104,17 +117,25 @@
       <HI-TECH-LINK>
         <property key="additional-options-checksum" value=""/>
         <property key="additional-options-checksumAVR" value=""/>
+<<<<<<< HEAD
+=======
         <property key="additional-options-checksumAVR2" value="0"/>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
         <property key="additional-options-code-offset" value=""/>
         <property key="additional-options-command-line" value=""/>
         <property key="additional-options-errata" value=""/>
         <property key="additional-options-extend-address" value="false"/>
+<<<<<<< HEAD
+=======
         <property key="additional-options-fillAVR2" value="0"/>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
         <property key="additional-options-trace-type" value=""/>
         <property key="additional-options-use-response-files" value="false"/>
         <property key="backup-reset-condition-flags" value="false"/>
         <property key="calibrate-oscillator" value="false"/>
         <property key="calibrate-oscillator-value" value="0x3400"/>
+<<<<<<< HEAD
+=======
         <property key="checksum-flash-options-addressce" value=""/>
         <property key="checksum-flash-options-addresscs" value=""/>
         <property key="checksum-flash-options-algorithmc"
@@ -122,14 +143,21 @@
         <property key="checksum-flash-options-destc" value=""/>
         <property key="checksum-flash-options-offsetc" value="0xFFFF"/>
         <property key="checksum-flash-options-widthc" value="2"/>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
         <property key="clear-bss" value="true"/>
         <property key="code-model-external" value="wordwrite"/>
         <property key="code-model-rom" value=""/>
         <property key="create-html-files" value="false"/>
         <property key="data-model-ram" value=""/>
+<<<<<<< HEAD
+        <property key="data-model-size-of-double" value="32"/>
+        <property key="data-model-size-of-double-gcc" value="no-short-double"/>
+        <property key="data-model-size-of-float" value="32"/>
+=======
         <property key="data-model-size-of-double" value="24"/>
         <property key="data-model-size-of-double-gcc" value="no-short-double"/>
         <property key="data-model-size-of-float" value="24"/>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
         <property key="data-model-size-of-float-gcc" value="no-short-float"/>
         <property key="display-class-usage" value="false"/>
         <property key="display-hex-usage" value="false"/>
@@ -137,16 +165,23 @@
         <property key="display-psect-usage" value="false"/>
         <property key="extra-lib-directories" value=""/>
         <property key="fill-flash-options-addr" value=""/>
+<<<<<<< HEAD
+        <property key="fill-flash-options-const" value=""/>
+=======
         <property key="fill-flash-options-addrfe" value=""/>
         <property key="fill-flash-options-addrfs" value=""/>
         <property key="fill-flash-options-const" value=""/>
         <property key="fill-flash-options-constf" value=""/>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
         <property key="fill-flash-options-how" value="0"/>
         <property key="fill-flash-options-inc-const" value="1"/>
         <property key="fill-flash-options-increment" value=""/>
         <property key="fill-flash-options-seq" value=""/>
         <property key="fill-flash-options-what" value="0"/>
+<<<<<<< HEAD
+=======
         <property key="fill-flash-options-wwidthf" value="2"/>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
         <property key="format-hex-file-for-download" value="false"/>
         <property key="initialize-data" value="true"/>
         <property key="input-libraries" value="libm"/>
@@ -161,6 +196,8 @@
         <property key="program-the-device-with-default-config-words" value="false"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+<<<<<<< HEAD
+=======
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>
@@ -1127,6 +1164,7 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Tool>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
       <XC8-CO>
         <property key="coverage-enable" value=""/>
         <property key="stack-guidance" value="false"/>
@@ -1149,6 +1187,8 @@
         <property key="user-pack-device-support" value=""/>
         <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+<<<<<<< HEAD
+=======
       <item path="config.h" ex="false" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
@@ -1181,6 +1221,7 @@
       </item>
       <item path="lab11.c" ex="true" overriding="false">
       </item>
+>>>>>>> 16a26dc850c114406dd9f218296dc05fea644037
     </conf>
   </confs>
 </configurationDescriptor>
