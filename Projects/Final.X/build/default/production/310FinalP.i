@@ -7,14 +7,6 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "310FinalP.c" 2
-
-
-
-
-
-
-
-
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -26879,7 +26871,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 10 "310FinalP.c" 2
+# 2 "310FinalP.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
@@ -27032,7 +27024,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "310FinalP.c" 2
+# 3 "310FinalP.c" 2
 
 # 1 "./config.h" 1
 
@@ -27087,7 +27079,7 @@ char *tempnam(const char *, const char *);
 
 
 #pragma config CP = OFF
-# 13 "310FinalP.c" 2
+# 5 "310FinalP.c" 2
 # 1 "./functions.h" 1
 
 
@@ -27219,7 +27211,7 @@ void MSdelay(unsigned int val)
         for(i=0;i<val;i++)
             for(j=0;j<165;j++);
 }
-# 14 "310FinalP.c" 2
+# 6 "310FinalP.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 3
@@ -27278,8 +27270,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 16 "310FinalP.c" 2
-# 26 "310FinalP.c"
+# 8 "310FinalP.c" 2
+# 18 "310FinalP.c"
 float voltage;
 int digital;
 float Difficulty;
@@ -27387,7 +27379,7 @@ Back:
                 LCD_Clear();
                 num = (rand() % 16);
                 PORTD = num;
-                _delay((unsigned long)((250)*(4000000/4000.0)));
+                _delay((unsigned long)((150)*(4000000/4000.0)));
                 PORTD = 0;
                 _delay((unsigned long)((100)*(4000000/4000.0)));
                 LCD_String_xy(1,0,"Enter Guess:");
@@ -27395,14 +27387,172 @@ Back:
                 while (PORTDbits.RD6 == 1){
                     if (PORTEbits.RE1 == 0){
                         count1 ++;
-                        _delay((unsigned long)((150)*(4000000/4000.0)));
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
                          sprintf(data,"%.2f",count1);
                        LCD_String_xy(1,0,"Enter Guess:");
                        LCD_String_xy(2,4,data);
                     }
                     if (PORTEbits.RE0 == 0){
                         count1 --;
-                        _delay((unsigned long)((150)*(4000000/4000.0)));
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+
+                    }
+                }
+                if (num == count1){
+                        LCD_Clear();
+                        count2 = count2 + 1;
+                        LCD_String_xy(1,0,"YOU WIN!!");
+                        _delay((unsigned long)((5000)*(4000000/4000.0)));
+                        count1 = 0;
+
+
+                    }
+                else {
+                     LCD_Clear();
+                     LCD_String_xy(1,0,"YOU LOSE :( ");
+                     _delay((unsigned long)((5000)*(4000000/4000.0)));
+                     count1 = 0;
+                }
+                    LCD_Clear();
+                LCD_String_xy(1,0,"Next Stage in 3:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 2");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 1:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_Clear();
+                num = (rand() % 16);
+                PORTD = num;
+                _delay((unsigned long)((50)*(4000000/4000.0)));
+                PORTD = 0;
+                _delay((unsigned long)((100)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Enter Guess:");
+                LCD_String_xy(2,4,"0.00");
+                while (PORTDbits.RD6 == 1){
+                    if (PORTEbits.RE1 == 0){
+                        count1 ++;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+                    }
+                    if (PORTEbits.RE0 == 0){
+                        count1 --;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+
+                    }
+
+                }
+                    if (num == count1){
+                        LCD_Clear();
+                        count2 = count2 + 1;
+                        LCD_String_xy(1,0,"YOU WIN!!");
+                        _delay((unsigned long)((5000)*(4000000/4000.0)));
+                        count1 = 0;
+
+
+                    }
+                else {
+                     LCD_Clear();
+                     LCD_String_xy(1,0,"YOU LOSE :( ");
+                     _delay((unsigned long)((5000)*(4000000/4000.0)));
+                     count1 = 0;
+
+
+
+                    }
+                if (count2 == 0) {
+                    LCD_String_xy(1,0,"Final Score:");
+                    LCD_String_xy(2,4,"0/3");
+                    _delay((unsigned long)((5000)*(4000000/4000.0)));
+                    goto Back;
+                }
+                sprintf(data,"%1.0d",count2);
+                LCD_String_xy(1,0,"Final Score:");
+                strcat(data,"/3");
+                LCD_String_xy(2,4,data);
+                _delay((unsigned long)((5000)*(4000000/4000.0)));
+                goto Back;
+                }
+
+                 if (Difficulty == 3){
+                 num = (rand() % 16);
+                PORTD = num;
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                PORTD = 0;
+                _delay((unsigned long)((100)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Enter Guess:");
+                LCD_String_xy(2,4,"0.00");
+                while (PORTDbits.RD6 == 1){
+                    if (PORTEbits.RE1 == 0){
+                        count1 ++;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+                    }
+                    if (PORTEbits.RE0 == 0){
+                        count1 --;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+
+                    }
+
+
+
+                }
+                if (num == count1){
+                        LCD_Clear();
+                        count2 = count2 + 1;
+                        LCD_String_xy(1,0,"YOU WIN!!");
+                        _delay((unsigned long)((5000)*(4000000/4000.0)));
+                        count1 = 0;
+
+
+                    }
+                else {
+                     LCD_Clear();
+                     LCD_String_xy(1,0,"YOU LOSE :( ");
+                     _delay((unsigned long)((5000)*(4000000/4000.0)));
+                     count1 = 0;
+
+
+
+                    }
+                LCD_Clear();
+                LCD_String_xy(1,0,"Next Stage in 3:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 2");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 1:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_Clear();
+                num = (rand() % 16);
+                PORTD = num;
+                _delay((unsigned long)((500)*(4000000/4000.0)));
+                PORTD = 0;
+                _delay((unsigned long)((100)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Enter Guess:");
+                LCD_String_xy(2,4,"0.00");
+                while (PORTDbits.RD6 == 1){
+                    if (PORTEbits.RE1 == 0){
+                        count1 ++;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+                    }
+                    if (PORTEbits.RE0 == 0){
+                        count1 --;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
                          sprintf(data,"%.2f",count1);
                        LCD_String_xy(1,0,"Enter Guess:");
                        LCD_String_xy(2,4,data);
@@ -27442,14 +27592,14 @@ Back:
                 while (PORTDbits.RD6 == 1){
                     if (PORTEbits.RE1 == 0){
                         count1 ++;
-                        _delay((unsigned long)((50)*(4000000/4000.0)));
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
                          sprintf(data,"%.2f",count1);
                        LCD_String_xy(1,0,"Enter Guess:");
                        LCD_String_xy(2,4,data);
                     }
                     if (PORTEbits.RE0 == 0){
                         count1 --;
-                        _delay((unsigned long)((50)*(4000000/4000.0)));
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
                          sprintf(data,"%.2f",count1);
                        LCD_String_xy(1,0,"Enter Guess:");
                        LCD_String_xy(2,4,data);
@@ -27488,11 +27638,11 @@ Back:
                 _delay((unsigned long)((5000)*(4000000/4000.0)));
                 goto Back;
                 }
-# 242 "310FinalP.c"
-            if (Difficulty == 3){
-                num = (rand() % 16);
+
+                 if (Difficulty == 2){
+                 num = (rand() % 16);
                 PORTD = num;
-                _delay((unsigned long)((500)*(4000000/4000.0)));
+                _delay((unsigned long)((1500)*(4000000/4000.0)));
                 PORTD = 0;
                 _delay((unsigned long)((100)*(4000000/4000.0)));
                 LCD_String_xy(1,0,"Enter Guess:");
@@ -27519,25 +27669,78 @@ Back:
                 }
                 if (num == count1){
                         LCD_Clear();
+                        count2 = count2 + 1;
                         LCD_String_xy(1,0,"YOU WIN!!");
                         _delay((unsigned long)((5000)*(4000000/4000.0)));
                         count1 = 0;
-                     goto Back;
+
+
                     }
                 else {
                      LCD_Clear();
                      LCD_String_xy(1,0,"YOU LOSE :( ");
                      _delay((unsigned long)((5000)*(4000000/4000.0)));
                      count1 = 0;
-                     goto Back;
+
+
 
                     }
+                LCD_Clear();
+                LCD_String_xy(1,0,"Next Stage in 3:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 2");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 1:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_Clear();
+                num = (rand() % 16);
+                PORTD = num;
+                _delay((unsigned long)((1250)*(4000000/4000.0)));
+                PORTD = 0;
+                _delay((unsigned long)((100)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Enter Guess:");
+                LCD_String_xy(2,4,"0.00");
+                while (PORTDbits.RD6 == 1){
+                    if (PORTEbits.RE1 == 0){
+                        count1 ++;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+                    }
+                    if (PORTEbits.RE0 == 0){
+                        count1 --;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+
+                    }
+                }
+                if (num == count1){
+                        LCD_Clear();
+                        count2 = count2 + 1;
+                        LCD_String_xy(1,0,"YOU WIN!!");
+                        _delay((unsigned long)((5000)*(4000000/4000.0)));
+                        count1 = 0;
 
 
-
-        }
-            if (Difficulty == 2){
-                num = (rand() % 14) + 1;
+                    }
+                else {
+                     LCD_Clear();
+                     LCD_String_xy(1,0,"YOU LOSE :( ");
+                     _delay((unsigned long)((5000)*(4000000/4000.0)));
+                     count1 = 0;
+                }
+                    LCD_Clear();
+                LCD_String_xy(1,0,"Next Stage in 3:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 2");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 1:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_Clear();
+                num = (rand() % 16);
                 PORTD = num;
                 _delay((unsigned long)((1000)*(4000000/4000.0)));
                 PORTD = 0;
@@ -27561,30 +27764,41 @@ Back:
 
                     }
 
-
-
                 }
-                if (num == count1){
+                    if (num == count1){
                         LCD_Clear();
+                        count2 = count2 + 1;
                         LCD_String_xy(1,0,"YOU WIN!!");
                         _delay((unsigned long)((5000)*(4000000/4000.0)));
                         count1 = 0;
-                     goto Back;
+
+
                     }
                 else {
                      LCD_Clear();
                      LCD_String_xy(1,0,"YOU LOSE :( ");
                      _delay((unsigned long)((5000)*(4000000/4000.0)));
                      count1 = 0;
-                     goto Back;
+
+
 
                     }
+                if (count2 == 0) {
+                    LCD_String_xy(1,0,"Final Score:");
+                    LCD_String_xy(2,4,"0/3");
+                    _delay((unsigned long)((5000)*(4000000/4000.0)));
+                    goto Back;
+                }
+                sprintf(data,"%1.0d",count2);
+                LCD_String_xy(1,0,"Final Score:");
+                strcat(data,"/3");
+                LCD_String_xy(2,4,data);
+                _delay((unsigned long)((5000)*(4000000/4000.0)));
+                goto Back;
+                }
 
-
-
-        }
-            if (Difficulty == 1){
-                num = (rand() % 16);
+                 if (Difficulty == 1){
+                 num = (rand() % 16);
                 PORTD = num;
                 _delay((unsigned long)((2000)*(4000000/4000.0)));
                 PORTD = 0;
@@ -27612,39 +27826,132 @@ Back:
 
                 }
                 if (num == count1){
-                    if (num == count1){
                         LCD_Clear();
+                        count2 = count2 + 1;
                         LCD_String_xy(1,0,"YOU WIN!!");
                         _delay((unsigned long)((5000)*(4000000/4000.0)));
                         count1 = 0;
 
-                     goto Back;
-                    }
-                        LCD_Clear();
-                        LCD_String_xy(1,0,"YOU WIN!!");
-                        _delay((unsigned long)((5000)*(4000000/4000.0)));
-                        count1 = 0;
-                     goto Back;
+
                     }
                 else {
                      LCD_Clear();
                      LCD_String_xy(1,0,"YOU LOSE :( ");
                      _delay((unsigned long)((5000)*(4000000/4000.0)));
                      count1 = 0;
-                     goto Back;
+
+
+
+                    }
+                LCD_Clear();
+                LCD_String_xy(1,0,"Next Stage in 3:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 2");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 1:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_Clear();
+                num = (rand() % 16);
+                PORTD = num;
+                _delay((unsigned long)((1750)*(4000000/4000.0)));
+                PORTD = 0;
+                _delay((unsigned long)((100)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Enter Guess:");
+                LCD_String_xy(2,4,"0.00");
+                while (PORTDbits.RD6 == 1){
+                    if (PORTEbits.RE1 == 0){
+                        count1 ++;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+                    }
+                    if (PORTEbits.RE0 == 0){
+                        count1 --;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+
+                    }
+                }
+                if (num == count1){
+                        LCD_Clear();
+                        count2 = count2 + 1;
+                        LCD_String_xy(1,0,"YOU WIN!!");
+                        _delay((unsigned long)((5000)*(4000000/4000.0)));
+                        count1 = 0;
+
+                    }
+                else {
+                     LCD_Clear();
+                     LCD_String_xy(1,0,"YOU LOSE :( ");
+                     _delay((unsigned long)((5000)*(4000000/4000.0)));
+                     count1 = 0;
+                }
+                    LCD_Clear();
+                LCD_String_xy(1,0,"Next Stage in 3:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 2");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Next Stage in 1:");
+                _delay((unsigned long)((1000)*(4000000/4000.0)));
+                LCD_Clear();
+                num = (rand() % 16);
+                PORTD = num;
+                _delay((unsigned long)((1500)*(4000000/4000.0)));
+                PORTD = 0;
+                _delay((unsigned long)((100)*(4000000/4000.0)));
+                LCD_String_xy(1,0,"Enter Guess:");
+                LCD_String_xy(2,4,"0.00");
+                while (PORTDbits.RD6 == 1){
+                    if (PORTEbits.RE1 == 0){
+                        count1 ++;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
+                    }
+                    if (PORTEbits.RE0 == 0){
+                        count1 --;
+                        _delay((unsigned long)((250)*(4000000/4000.0)));
+                         sprintf(data,"%.2f",count1);
+                       LCD_String_xy(1,0,"Enter Guess:");
+                       LCD_String_xy(2,4,data);
 
                     }
 
+                }
+                    if (num == count1){
+                        LCD_Clear();
+                        count2 = count2 + 1;
+                        LCD_String_xy(1,0,"YOU WIN!!");
+                        _delay((unsigned long)((5000)*(4000000/4000.0)));
+                        count1 = 0;
+
+                    }
+                else {
+                     LCD_Clear();
+                     LCD_String_xy(1,0,"YOU LOSE :( ");
+                     _delay((unsigned long)((5000)*(4000000/4000.0)));
+                     count1 = 0;
 
 
-        }
+                    }
+                if (count2 == 0) {
+                    LCD_String_xy(1,0,"Final Score:");
+                    LCD_String_xy(2,4,"0/3");
+                    _delay((unsigned long)((5000)*(4000000/4000.0)));
+                    goto Back;
+                }
+                sprintf(data,"%1.0d",count2);
+                LCD_String_xy(1,0,"Final Score:");
+                strcat(data,"/3");
+                LCD_String_xy(2,4,data);
+                _delay((unsigned long)((5000)*(4000000/4000.0)));
+                goto Back;
+                }
         }
     }
-
-
-
-
-
-
     }
 }

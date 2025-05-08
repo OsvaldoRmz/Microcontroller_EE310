@@ -2773,740 +2773,1408 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./functions.h: 76: }
 [e :UE 2258 ]
 }
-"26 310FinalP.c
+"18 310FinalP.c
 [v _voltage `f ~T0 @X0 1 e ]
-"27
+"19
 [v _digital `i ~T0 @X0 1 e ]
-"28
+"20
 [v _Difficulty `f ~T0 @X0 1 e ]
-"29
+"21
 [v _data `uc ~T0 @X0 -> 10 `i e ]
-"30
+"22
 [v _count1 `f ~T0 @X0 1 e ]
-"31
+"23
 [v _count2 `i ~T0 @X0 1 e ]
-"32
+"24
 [v _num `i ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"35
+"27
 [v _main `(v ~T0 @X0 1 ef ]
-"36
+"28
 {
 [e :U _main ]
 [f ]
-"37
+"29
 [e :U 2268 ]
-"39
+"31
 [e ( _LCD_Init ..  ]
-"40
+"32
 [e ( _ADC_Init ..  ]
-"41
+"33
 [e = _count2 -> 0 `i ]
-"42
+"34
 [e = _count1 -> -> 0 `i `f ]
-"46
+"38
 [e :U 2270 ]
 {
-"47
+"39
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"48
+"40
 [e $U 2272  ]
 [e :U 2273 ]
 [e :U 2272 ]
 [e $ != -> . . _ADCON0bits 0 0 `i -> 0 `i 2273  ]
 [e :U 2274 ]
-"49
+"41
 [e = _digital | * -> _ADRESH `i -> 256 `i -> _ADRESL `i ]
-"50
+"42
 [e = _voltage * -> _digital `f / -> .3.3 `f -> -> 4096 `i `f ]
-"51
+"43
 [e $ ! < -> _voltage `d .1.0 2275  ]
 {
 [e = _Difficulty -> -> 1 `i `f ]
 }
 [e :U 2275 ]
-"52
+"44
 [e $ ! > -> _voltage `d .1.0 2276  ]
 {
 [e = _Difficulty -> -> 2 `i `f ]
 }
 [e :U 2276 ]
-"53
+"45
 [e $ ! > -> _voltage `d .1.5 2277  ]
 {
 [e = _Difficulty -> -> 3 `i `f ]
 }
 [e :U 2277 ]
-"55
+"47
 [e $ ! > _voltage -> -> 2 `i `f 2278  ]
 {
 [e = _Difficulty -> -> 4 `i `f ]
 }
 [e :U 2278 ]
-"61
+"53
 [e ( _sprintf (1 , (. , &U _data :s 1C -> _Difficulty `d ]
-"63
+"55
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 2C ]
-"64
+"56
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"66
+"58
 [e ( _MSdelay (1 -> -> 100 `i `ui ]
-"67
+"59
 [e $ ! == -> . . _PORTDbits 0 7 `i -> 0 `i 2279  ]
 {
-"68
+"60
 [e ( _LCD_Clear ..  ]
-"69
+"61
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 3C ]
-"70
+"62
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"71
+"63
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 4C ]
-"72
+"64
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"73
+"65
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 5C ]
-"74
+"66
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"75
+"67
 [e ( _LCD_Clear ..  ]
-"76
+"68
 [e :U 2281 ]
 {
-"77
+"69
 [e $ ! == _Difficulty -> -> 4 `i `f 2283  ]
 {
-"78
+"70
 [e = _num % ( _rand ..  -> 16 `i ]
-"79
+"71
 [e = _PORTD -> _num `uc ]
-"80
+"72
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"81
+"73
 [e = _PORTD -> -> 0 `i `uc ]
-"82
+"74
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"83
+"75
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 6C ]
-"84
+"76
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 7C ]
-"85
+"77
 [e $U 2284  ]
 [e :U 2285 ]
 {
-"86
+"78
 [e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2287  ]
 {
-"87
+"79
 [e ++ _count1 -> -> 1 `i `f ]
-"88
+"80
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"89
+"81
 [e ( _sprintf (1 , (. , &U _data :s 8C -> _count1 `d ]
-"90
+"82
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 9C ]
-"91
+"83
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"84
+}
+[e :U 2287 ]
+"85
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2288  ]
+{
+"86
+[e -- _count1 -> -> 1 `i `f ]
+"87
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"88
+[e ( _sprintf (1 , (. , &U _data :s 10C -> _count1 `d ]
+"89
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 11C ]
+"90
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
 "92
 }
-[e :U 2287 ]
-"93
-[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2288  ]
-{
-"94
-[e -- _count1 -> -> 1 `i `f ]
-"95
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"96
-[e ( _sprintf (1 , (. , &U _data :s 10C -> _count1 `d ]
-"97
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 11C ]
-"98
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"100
-}
 [e :U 2288 ]
-"104
+"96
 }
 [e :U 2284 ]
-"85
+"77
 [e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2285  ]
 [e :U 2286 ]
-"105
+"97
 [e $ ! == -> _num `f _count1 2289  ]
 {
-"106
+"98
 [e ( _LCD_Clear ..  ]
-"107
+"99
 [e = _count2 + _count2 -> 1 `i ]
-"108
+"100
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 12C ]
+"101
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"102
+[e = _count1 -> -> 0 `i `f ]
+"105
+}
+[e $U 2290  ]
+"106
+[e :U 2289 ]
+{
+"107
+[e ( _LCD_Clear ..  ]
+"108
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 13C ]
 "109
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "110
 [e = _count1 -> -> 0 `i `f ]
-"113
-}
-[e $U 2290  ]
 "114
-[e :U 2289 ]
-{
+}
+[e :U 2290 ]
 "115
 [e ( _LCD_Clear ..  ]
 "116
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 13C ]
-"117
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"118
-[e = _count1 -> -> 0 `i `f ]
-"122
-}
-[e :U 2290 ]
-"123
-[e ( _LCD_Clear ..  ]
-"124
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 14C ]
-"125
+"117
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"126
+"118
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 15C ]
-"127
+"119
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"128
+"120
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 16C ]
-"129
+"121
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"130
+"122
 [e ( _LCD_Clear ..  ]
-"131
+"123
 [e = _num % ( _rand ..  -> 16 `i ]
-"132
+"124
 [e = _PORTD -> _num `uc ]
-"133
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"134
+"125
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"126
 [e = _PORTD -> -> 0 `i `uc ]
-"135
+"127
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"136
+"128
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 17C ]
-"137
+"129
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 18C ]
-"138
+"130
 [e $U 2291  ]
 [e :U 2292 ]
 {
-"139
+"131
 [e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2294  ]
 {
-"140
+"132
 [e ++ _count1 -> -> 1 `i `f ]
-"141
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"142
+"133
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"134
 [e ( _sprintf (1 , (. , &U _data :s 19C -> _count1 `d ]
-"143
+"135
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 20C ]
-"144
+"136
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"137
+}
+[e :U 2294 ]
+"138
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2295  ]
+{
+"139
+[e -- _count1 -> -> 1 `i `f ]
+"140
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"141
+[e ( _sprintf (1 , (. , &U _data :s 21C -> _count1 `d ]
+"142
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 22C ]
+"143
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
 "145
 }
-[e :U 2294 ]
-"146
-[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2295  ]
-{
-"147
-[e -- _count1 -> -> 1 `i `f ]
-"148
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"149
-[e ( _sprintf (1 , (. , &U _data :s 21C -> _count1 `d ]
-"150
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 22C ]
-"151
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"153
-}
 [e :U 2295 ]
-"154
+"146
 }
 [e :U 2291 ]
-"138
+"130
 [e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2292  ]
 [e :U 2293 ]
-"155
+"147
 [e $ ! == -> _num `f _count1 2296  ]
 {
-"156
+"148
 [e ( _LCD_Clear ..  ]
-"157
+"149
 [e = _count2 + _count2 -> 1 `i ]
-"158
+"150
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 23C ]
+"151
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"152
+[e = _count1 -> -> 0 `i `f ]
+"155
+}
+[e $U 2297  ]
+"156
+[e :U 2296 ]
+{
+"157
+[e ( _LCD_Clear ..  ]
+"158
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 24C ]
 "159
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "160
 [e = _count1 -> -> 0 `i `f ]
-"163
-}
-[e $U 2297  ]
-"164
-[e :U 2296 ]
-{
-"165
-[e ( _LCD_Clear ..  ]
-"166
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 24C ]
-"167
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"168
-[e = _count1 -> -> 0 `i `f ]
-"169
+"161
 }
 [e :U 2297 ]
-"170
+"162
 [e ( _LCD_Clear ..  ]
-"171
+"163
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 25C ]
-"172
+"164
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"173
+"165
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 26C ]
-"174
+"166
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"175
+"167
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 27C ]
-"176
+"168
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"177
+"169
 [e ( _LCD_Clear ..  ]
-"178
+"170
 [e = _num % ( _rand ..  -> 16 `i ]
-"179
+"171
 [e = _PORTD -> _num `uc ]
-"180
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"181
+"172
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"173
 [e = _PORTD -> -> 0 `i `uc ]
-"182
+"174
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"183
+"175
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 28C ]
-"184
+"176
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 29C ]
-"185
+"177
 [e $U 2298  ]
 [e :U 2299 ]
 {
-"186
+"178
 [e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2301  ]
 {
-"187
+"179
 [e ++ _count1 -> -> 1 `i `f ]
-"188
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"189
+"180
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"181
 [e ( _sprintf (1 , (. , &U _data :s 30C -> _count1 `d ]
-"190
+"182
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 31C ]
-"191
+"183
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"184
+}
+[e :U 2301 ]
+"185
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2302  ]
+{
+"186
+[e -- _count1 -> -> 1 `i `f ]
+"187
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"188
+[e ( _sprintf (1 , (. , &U _data :s 32C -> _count1 `d ]
+"189
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 33C ]
+"190
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
 "192
 }
-[e :U 2301 ]
-"193
-[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2302  ]
-{
-"194
-[e -- _count1 -> -> 1 `i `f ]
-"195
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"196
-[e ( _sprintf (1 , (. , &U _data :s 32C -> _count1 `d ]
-"197
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 33C ]
-"198
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"200
-}
 [e :U 2302 ]
-"202
+"194
 }
 [e :U 2298 ]
-"185
+"177
 [e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2299  ]
 [e :U 2300 ]
-"203
+"195
 [e $ ! == -> _num `f _count1 2303  ]
 {
-"204
+"196
 [e ( _LCD_Clear ..  ]
-"205
+"197
 [e = _count2 + _count2 -> 1 `i ]
-"206
+"198
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 34C ]
+"199
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"200
+[e = _count1 -> -> 0 `i `f ]
+"203
+}
+[e $U 2304  ]
+"204
+[e :U 2303 ]
+{
+"205
+[e ( _LCD_Clear ..  ]
+"206
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 35C ]
 "207
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "208
 [e = _count1 -> -> 0 `i `f ]
-"211
-}
-[e $U 2304  ]
 "212
-[e :U 2303 ]
-{
-"213
-[e ( _LCD_Clear ..  ]
-"214
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 35C ]
-"215
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"216
-[e = _count1 -> -> 0 `i `f ]
-"220
 }
 [e :U 2304 ]
-"221
+"213
 [e $ ! == _count2 -> 0 `i 2305  ]
 {
-"222
+"214
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 36C ]
-"223
+"215
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 37C ]
-"224
+"216
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"225
+"217
 [e $U 2268  ]
-"226
+"218
 }
 [e :U 2305 ]
-"227
+"219
 [e ( _sprintf (1 , (. , &U _data :s 38C _count2 ]
-"228
+"220
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 39C ]
-"229
+"221
 [e ( _strcat (2 , &U _data :s 40C ]
-"230
+"222
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"231
+"223
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"232
+"224
 [e $U 2268  ]
-"233
+"225
 }
 [e :U 2283 ]
-"242
+"227
 [e $ ! == _Difficulty -> -> 3 `i `f 2306  ]
 {
-"243
+"228
 [e = _num % ( _rand ..  -> 16 `i ]
-"244
+"229
 [e = _PORTD -> _num `uc ]
-"245
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"246
+"230
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"231
 [e = _PORTD -> -> 0 `i `uc ]
-"247
+"232
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"248
+"233
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 41C ]
-"249
+"234
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 42C ]
-"250
+"235
 [e $U 2307  ]
 [e :U 2308 ]
 {
-"251
+"236
 [e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2310  ]
 {
-"252
+"237
 [e ++ _count1 -> -> 1 `i `f ]
-"253
+"238
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"254
+"239
 [e ( _sprintf (1 , (. , &U _data :s 43C -> _count1 `d ]
-"255
+"240
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 44C ]
-"256
+"241
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"257
+"242
 }
 [e :U 2310 ]
-"258
+"243
 [e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2311  ]
 {
-"259
+"244
 [e -- _count1 -> -> 1 `i `f ]
-"260
+"245
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"261
+"246
 [e ( _sprintf (1 , (. , &U _data :s 45C -> _count1 `d ]
-"262
+"247
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 46C ]
-"263
+"248
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"265
+"250
 }
 [e :U 2311 ]
-"269
+"254
 }
 [e :U 2307 ]
-"250
+"235
 [e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2308  ]
 [e :U 2309 ]
-"270
+"255
 [e $ ! == -> _num `f _count1 2312  ]
 {
-"271
+"256
 [e ( _LCD_Clear ..  ]
-"272
+"257
+[e = _count2 + _count2 -> 1 `i ]
+"258
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 47C ]
-"273
+"259
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"274
+"260
 [e = _count1 -> -> 0 `i `f ]
-"275
-[e $U 2268  ]
-"276
+"263
 }
 [e $U 2313  ]
-"277
+"264
 [e :U 2312 ]
 {
-"278
+"265
 [e ( _LCD_Clear ..  ]
-"279
+"266
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 48C ]
-"280
+"267
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"281
+"268
 [e = _count1 -> -> 0 `i `f ]
-"282
-[e $U 2268  ]
-"284
+"272
 }
 [e :U 2313 ]
+"273
+[e ( _LCD_Clear ..  ]
+"274
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 49C ]
+"275
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"276
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 50C ]
+"277
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"278
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 51C ]
+"279
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"280
+[e ( _LCD_Clear ..  ]
+"281
+[e = _num % ( _rand ..  -> 16 `i ]
+"282
+[e = _PORTD -> _num `uc ]
+"283
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"284
+[e = _PORTD -> -> 0 `i `uc ]
+"285
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"286
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 52C ]
+"287
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 53C ]
 "288
-}
-[e :U 2306 ]
+[e $U 2314  ]
+[e :U 2315 ]
+{
 "289
-[e $ ! == _Difficulty -> -> 2 `i `f 2314  ]
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2317  ]
 {
 "290
-[e = _num + % ( _rand ..  -> 14 `i -> 1 `i ]
-"291
-[e = _PORTD -> _num `uc ]
-"292
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"293
-[e = _PORTD -> -> 0 `i `uc ]
-"294
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"295
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 49C ]
-"296
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 50C ]
-"297
-[e $U 2315  ]
-[e :U 2316 ]
-{
-"298
-[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2318  ]
-{
-"299
 [e ++ _count1 -> -> 1 `i `f ]
-"300
+"291
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"301
-[e ( _sprintf (1 , (. , &U _data :s 51C -> _count1 `d ]
-"302
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 52C ]
-"303
+"292
+[e ( _sprintf (1 , (. , &U _data :s 54C -> _count1 `d ]
+"293
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 55C ]
+"294
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"304
+"295
+}
+[e :U 2317 ]
+"296
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2318  ]
+{
+"297
+[e -- _count1 -> -> 1 `i `f ]
+"298
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"299
+[e ( _sprintf (1 , (. , &U _data :s 56C -> _count1 `d ]
+"300
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 57C ]
+"301
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"303
 }
 [e :U 2318 ]
+"304
+}
+[e :U 2314 ]
+"288
+[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2315  ]
+[e :U 2316 ]
 "305
-[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2319  ]
+[e $ ! == -> _num `f _count1 2319  ]
 {
 "306
-[e -- _count1 -> -> 1 `i `f ]
+[e ( _LCD_Clear ..  ]
 "307
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e = _count2 + _count2 -> 1 `i ]
 "308
-[e ( _sprintf (1 , (. , &U _data :s 53C -> _count1 `d ]
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 58C ]
 "309
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 54C ]
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "310
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"312
+[e = _count1 -> -> 0 `i `f ]
+"313
 }
+[e $U 2320  ]
+"314
 [e :U 2319 ]
+{
+"315
+[e ( _LCD_Clear ..  ]
 "316
-}
-[e :U 2315 ]
-"297
-[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2316  ]
-[e :U 2317 ]
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 59C ]
 "317
-[e $ ! == -> _num `f _count1 2320  ]
-{
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "318
-[e ( _LCD_Clear ..  ]
+[e = _count1 -> -> 0 `i `f ]
 "319
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 55C ]
-"320
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"321
-[e = _count1 -> -> 0 `i `f ]
-"322
-[e $U 2268  ]
-"323
 }
-[e $U 2321  ]
-"324
 [e :U 2320 ]
-{
-"325
+"320
 [e ( _LCD_Clear ..  ]
+"321
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 60C ]
+"322
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"323
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 61C ]
+"324
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"325
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 62C ]
 "326
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 56C ]
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "327
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e ( _LCD_Clear ..  ]
 "328
-[e = _count1 -> -> 0 `i `f ]
+[e = _num % ( _rand ..  -> 16 `i ]
 "329
-[e $U 2268  ]
+[e = _PORTD -> _num `uc ]
+"330
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "331
+[e = _PORTD -> -> 0 `i `uc ]
+"332
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"333
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 63C ]
+"334
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 64C ]
+"335
+[e $U 2321  ]
+[e :U 2322 ]
+{
+"336
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2324  ]
+{
+"337
+[e ++ _count1 -> -> 1 `i `f ]
+"338
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"339
+[e ( _sprintf (1 , (. , &U _data :s 65C -> _count1 `d ]
+"340
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 66C ]
+"341
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"342
+}
+[e :U 2324 ]
+"343
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2325  ]
+{
+"344
+[e -- _count1 -> -> 1 `i `f ]
+"345
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"346
+[e ( _sprintf (1 , (. , &U _data :s 67C -> _count1 `d ]
+"347
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 68C ]
+"348
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"350
+}
+[e :U 2325 ]
+"352
 }
 [e :U 2321 ]
 "335
-}
-[e :U 2314 ]
-"336
-[e $ ! == _Difficulty -> -> 1 `i `f 2322  ]
-{
-"337
-[e = _num % ( _rand ..  -> 16 `i ]
-"338
-[e = _PORTD -> _num `uc ]
-"339
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"340
-[e = _PORTD -> -> 0 `i `uc ]
-"341
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"342
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 57C ]
-"343
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 58C ]
-"344
-[e $U 2323  ]
-[e :U 2324 ]
-{
-"345
-[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2326  ]
-{
-"346
-[e ++ _count1 -> -> 1 `i `f ]
-"347
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"348
-[e ( _sprintf (1 , (. , &U _data :s 59C -> _count1 `d ]
-"349
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 60C ]
-"350
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"351
-}
-[e :U 2326 ]
-"352
-[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2327  ]
-{
+[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2322  ]
+[e :U 2323 ]
 "353
-[e -- _count1 -> -> 1 `i `f ]
+[e $ ! == -> _num `f _count1 2326  ]
+{
 "354
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e ( _LCD_Clear ..  ]
 "355
-[e ( _sprintf (1 , (. , &U _data :s 61C -> _count1 `d ]
+[e = _count2 + _count2 -> 1 `i ]
 "356
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 62C ]
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 69C ]
 "357
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
-"359
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"358
+[e = _count1 -> -> 0 `i `f ]
+"361
+}
+[e $U 2327  ]
+"362
+[e :U 2326 ]
+{
+"363
+[e ( _LCD_Clear ..  ]
+"364
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 70C ]
+"365
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"366
+[e = _count1 -> -> 0 `i `f ]
+"370
 }
 [e :U 2327 ]
-"363
-}
-[e :U 2323 ]
-"344
-[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2324  ]
-[e :U 2325 ]
-"364
-[e $ ! == -> _num `f _count1 2328  ]
-{
-"365
-[e $ ! == -> _num `f _count1 2329  ]
-{
-"366
-[e ( _LCD_Clear ..  ]
-"367
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 63C ]
-"368
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"369
-[e = _count1 -> -> 0 `i `f ]
 "371
-[e $U 2268  ]
-"372
-}
-[e :U 2329 ]
-"373
-[e ( _LCD_Clear ..  ]
-"374
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 64C ]
-"375
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"376
-[e = _count1 -> -> 0 `i `f ]
-"377
-[e $U 2268  ]
-"378
-}
-[e $U 2330  ]
-"379
-[e :U 2328 ]
+[e $ ! == _count2 -> 0 `i 2328  ]
 {
-"380
-[e ( _LCD_Clear ..  ]
-"381
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 65C ]
-"382
+"372
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 71C ]
+"373
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 72C ]
+"374
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"383
-[e = _count1 -> -> 0 `i `f ]
-"384
+"375
 [e $U 2268  ]
+"376
+}
+[e :U 2328 ]
+"377
+[e ( _sprintf (1 , (. , &U _data :s 73C _count2 ]
+"378
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 74C ]
+"379
+[e ( _strcat (2 , &U _data :s 75C ]
+"380
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"381
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"382
+[e $U 2268  ]
+"383
+}
+[e :U 2306 ]
+"385
+[e $ ! == _Difficulty -> -> 2 `i `f 2329  ]
+{
 "386
+[e = _num % ( _rand ..  -> 16 `i ]
+"387
+[e = _PORTD -> _num `uc ]
+"388
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"389
+[e = _PORTD -> -> 0 `i `uc ]
+"390
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"391
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 76C ]
+"392
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 77C ]
+"393
+[e $U 2330  ]
+[e :U 2331 ]
+{
+"394
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2333  ]
+{
+"395
+[e ++ _count1 -> -> 1 `i `f ]
+"396
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"397
+[e ( _sprintf (1 , (. , &U _data :s 78C -> _count1 `d ]
+"398
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 79C ]
+"399
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"400
+}
+[e :U 2333 ]
+"401
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2334  ]
+{
+"402
+[e -- _count1 -> -> 1 `i `f ]
+"403
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"404
+[e ( _sprintf (1 , (. , &U _data :s 80C -> _count1 `d ]
+"405
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 81C ]
+"406
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"408
+}
+[e :U 2334 ]
+"412
 }
 [e :U 2330 ]
-"390
+"393
+[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2331  ]
+[e :U 2332 ]
+"413
+[e $ ! == -> _num `f _count1 2335  ]
+{
+"414
+[e ( _LCD_Clear ..  ]
+"415
+[e = _count2 + _count2 -> 1 `i ]
+"416
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 82C ]
+"417
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"418
+[e = _count1 -> -> 0 `i `f ]
+"421
 }
-[e :U 2322 ]
-"391
+[e $U 2336  ]
+"422
+[e :U 2335 ]
+{
+"423
+[e ( _LCD_Clear ..  ]
+"424
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 83C ]
+"425
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"426
+[e = _count1 -> -> 0 `i `f ]
+"430
+}
+[e :U 2336 ]
+"431
+[e ( _LCD_Clear ..  ]
+"432
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 84C ]
+"433
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"434
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 85C ]
+"435
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"436
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 86C ]
+"437
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"438
+[e ( _LCD_Clear ..  ]
+"439
+[e = _num % ( _rand ..  -> 16 `i ]
+"440
+[e = _PORTD -> _num `uc ]
+"441
+[e ( __delay (1 -> * -> -> 1250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"442
+[e = _PORTD -> -> 0 `i `uc ]
+"443
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"444
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 87C ]
+"445
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 88C ]
+"446
+[e $U 2337  ]
+[e :U 2338 ]
+{
+"447
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2340  ]
+{
+"448
+[e ++ _count1 -> -> 1 `i `f ]
+"449
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"450
+[e ( _sprintf (1 , (. , &U _data :s 89C -> _count1 `d ]
+"451
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 90C ]
+"452
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"453
+}
+[e :U 2340 ]
+"454
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2341  ]
+{
+"455
+[e -- _count1 -> -> 1 `i `f ]
+"456
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"457
+[e ( _sprintf (1 , (. , &U _data :s 91C -> _count1 `d ]
+"458
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 92C ]
+"459
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"461
+}
+[e :U 2341 ]
+"462
+}
+[e :U 2337 ]
+"446
+[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2338  ]
+[e :U 2339 ]
+"463
+[e $ ! == -> _num `f _count1 2342  ]
+{
+"464
+[e ( _LCD_Clear ..  ]
+"465
+[e = _count2 + _count2 -> 1 `i ]
+"466
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 93C ]
+"467
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"468
+[e = _count1 -> -> 0 `i `f ]
+"471
+}
+[e $U 2343  ]
+"472
+[e :U 2342 ]
+{
+"473
+[e ( _LCD_Clear ..  ]
+"474
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 94C ]
+"475
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"476
+[e = _count1 -> -> 0 `i `f ]
+"477
+}
+[e :U 2343 ]
+"478
+[e ( _LCD_Clear ..  ]
+"479
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 95C ]
+"480
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"481
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 96C ]
+"482
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"483
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 97C ]
+"484
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"485
+[e ( _LCD_Clear ..  ]
+"486
+[e = _num % ( _rand ..  -> 16 `i ]
+"487
+[e = _PORTD -> _num `uc ]
+"488
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"489
+[e = _PORTD -> -> 0 `i `uc ]
+"490
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"491
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 98C ]
+"492
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 99C ]
+"493
+[e $U 2344  ]
+[e :U 2345 ]
+{
+"494
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2347  ]
+{
+"495
+[e ++ _count1 -> -> 1 `i `f ]
+"496
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"497
+[e ( _sprintf (1 , (. , &U _data :s 100C -> _count1 `d ]
+"498
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 101C ]
+"499
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"500
+}
+[e :U 2347 ]
+"501
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2348  ]
+{
+"502
+[e -- _count1 -> -> 1 `i `f ]
+"503
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"504
+[e ( _sprintf (1 , (. , &U _data :s 102C -> _count1 `d ]
+"505
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 103C ]
+"506
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"508
+}
+[e :U 2348 ]
+"510
+}
+[e :U 2344 ]
+"493
+[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2345  ]
+[e :U 2346 ]
+"511
+[e $ ! == -> _num `f _count1 2349  ]
+{
+"512
+[e ( _LCD_Clear ..  ]
+"513
+[e = _count2 + _count2 -> 1 `i ]
+"514
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 104C ]
+"515
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"516
+[e = _count1 -> -> 0 `i `f ]
+"519
+}
+[e $U 2350  ]
+"520
+[e :U 2349 ]
+{
+"521
+[e ( _LCD_Clear ..  ]
+"522
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 105C ]
+"523
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"524
+[e = _count1 -> -> 0 `i `f ]
+"528
+}
+[e :U 2350 ]
+"529
+[e $ ! == _count2 -> 0 `i 2351  ]
+{
+"530
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 106C ]
+"531
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 107C ]
+"532
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"533
+[e $U 2268  ]
+"534
+}
+[e :U 2351 ]
+"535
+[e ( _sprintf (1 , (. , &U _data :s 108C _count2 ]
+"536
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 109C ]
+"537
+[e ( _strcat (2 , &U _data :s 110C ]
+"538
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"539
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"540
+[e $U 2268  ]
+"541
+}
+[e :U 2329 ]
+"543
+[e $ ! == _Difficulty -> -> 1 `i `f 2352  ]
+{
+"544
+[e = _num % ( _rand ..  -> 16 `i ]
+"545
+[e = _PORTD -> _num `uc ]
+"546
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"547
+[e = _PORTD -> -> 0 `i `uc ]
+"548
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"549
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 111C ]
+"550
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 112C ]
+"551
+[e $U 2353  ]
+[e :U 2354 ]
+{
+"552
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2356  ]
+{
+"553
+[e ++ _count1 -> -> 1 `i `f ]
+"554
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"555
+[e ( _sprintf (1 , (. , &U _data :s 113C -> _count1 `d ]
+"556
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 114C ]
+"557
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"558
+}
+[e :U 2356 ]
+"559
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2357  ]
+{
+"560
+[e -- _count1 -> -> 1 `i `f ]
+"561
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"562
+[e ( _sprintf (1 , (. , &U _data :s 115C -> _count1 `d ]
+"563
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 116C ]
+"564
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"566
+}
+[e :U 2357 ]
+"570
+}
+[e :U 2353 ]
+"551
+[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2354  ]
+[e :U 2355 ]
+"571
+[e $ ! == -> _num `f _count1 2358  ]
+{
+"572
+[e ( _LCD_Clear ..  ]
+"573
+[e = _count2 + _count2 -> 1 `i ]
+"574
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 117C ]
+"575
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"576
+[e = _count1 -> -> 0 `i `f ]
+"579
+}
+[e $U 2359  ]
+"580
+[e :U 2358 ]
+{
+"581
+[e ( _LCD_Clear ..  ]
+"582
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 118C ]
+"583
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"584
+[e = _count1 -> -> 0 `i `f ]
+"588
+}
+[e :U 2359 ]
+"589
+[e ( _LCD_Clear ..  ]
+"590
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 119C ]
+"591
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"592
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 120C ]
+"593
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"594
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 121C ]
+"595
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"596
+[e ( _LCD_Clear ..  ]
+"597
+[e = _num % ( _rand ..  -> 16 `i ]
+"598
+[e = _PORTD -> _num `uc ]
+"599
+[e ( __delay (1 -> * -> -> 1750 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"600
+[e = _PORTD -> -> 0 `i `uc ]
+"601
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"602
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 122C ]
+"603
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 123C ]
+"604
+[e $U 2360  ]
+[e :U 2361 ]
+{
+"605
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2363  ]
+{
+"606
+[e ++ _count1 -> -> 1 `i `f ]
+"607
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"608
+[e ( _sprintf (1 , (. , &U _data :s 124C -> _count1 `d ]
+"609
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 125C ]
+"610
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"611
+}
+[e :U 2363 ]
+"612
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2364  ]
+{
+"613
+[e -- _count1 -> -> 1 `i `f ]
+"614
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"615
+[e ( _sprintf (1 , (. , &U _data :s 126C -> _count1 `d ]
+"616
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 127C ]
+"617
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"619
+}
+[e :U 2364 ]
+"620
+}
+[e :U 2360 ]
+"604
+[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2361  ]
+[e :U 2362 ]
+"621
+[e $ ! == -> _num `f _count1 2365  ]
+{
+"622
+[e ( _LCD_Clear ..  ]
+"623
+[e = _count2 + _count2 -> 1 `i ]
+"624
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 128C ]
+"625
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"626
+[e = _count1 -> -> 0 `i `f ]
+"628
+}
+[e $U 2366  ]
+"629
+[e :U 2365 ]
+{
+"630
+[e ( _LCD_Clear ..  ]
+"631
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 129C ]
+"632
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"633
+[e = _count1 -> -> 0 `i `f ]
+"634
+}
+[e :U 2366 ]
+"635
+[e ( _LCD_Clear ..  ]
+"636
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 130C ]
+"637
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"638
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 131C ]
+"639
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"640
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 132C ]
+"641
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"642
+[e ( _LCD_Clear ..  ]
+"643
+[e = _num % ( _rand ..  -> 16 `i ]
+"644
+[e = _PORTD -> _num `uc ]
+"645
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"646
+[e = _PORTD -> -> 0 `i `uc ]
+"647
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"648
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 133C ]
+"649
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 134C ]
+"650
+[e $U 2367  ]
+[e :U 2368 ]
+{
+"651
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 2370  ]
+{
+"652
+[e ++ _count1 -> -> 1 `i `f ]
+"653
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"654
+[e ( _sprintf (1 , (. , &U _data :s 135C -> _count1 `d ]
+"655
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 136C ]
+"656
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"657
+}
+[e :U 2370 ]
+"658
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 2371  ]
+{
+"659
+[e -- _count1 -> -> 1 `i `f ]
+"660
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"661
+[e ( _sprintf (1 , (. , &U _data :s 137C -> _count1 `d ]
+"662
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 138C ]
+"663
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"665
+}
+[e :U 2371 ]
+"667
+}
+[e :U 2367 ]
+"650
+[e $ == -> . . _PORTDbits 0 6 `i -> 1 `i 2368  ]
+[e :U 2369 ]
+"668
+[e $ ! == -> _num `f _count1 2372  ]
+{
+"669
+[e ( _LCD_Clear ..  ]
+"670
+[e = _count2 + _count2 -> 1 `i ]
+"671
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 139C ]
+"672
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"673
+[e = _count1 -> -> 0 `i `f ]
+"675
+}
+[e $U 2373  ]
+"676
+[e :U 2372 ]
+{
+"677
+[e ( _LCD_Clear ..  ]
+"678
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 140C ]
+"679
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"680
+[e = _count1 -> -> 0 `i `f ]
+"683
+}
+[e :U 2373 ]
+"684
+[e $ ! == _count2 -> 0 `i 2374  ]
+{
+"685
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 141C ]
+"686
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc :s 142C ]
+"687
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"688
+[e $U 2268  ]
+"689
+}
+[e :U 2374 ]
+"690
+[e ( _sprintf (1 , (. , &U _data :s 143C _count2 ]
+"691
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 144C ]
+"692
+[e ( _strcat (2 , &U _data :s 145C ]
+"693
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+"694
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"695
+[e $U 2268  ]
+"696
+}
+[e :U 2352 ]
+"697
 }
 [e :U 2280 ]
 [e $U 2281  ]
 [e :U 2282 ]
-"392
+"698
 }
 [e :U 2279 ]
-"399
+"699
 }
 [e :U 2269 ]
 [e $U 2270  ]
 [e :U 2271 ]
-"400
+"700
 [e :UE 2267 ]
 }
 [p f _sprintf 8495232 ]
@@ -3519,11 +4187,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 32C 37 46 50 102 0 ]
 [a 43C 37 46 50 102 0 ]
 [a 45C 37 46 50 102 0 ]
-[a 51C 37 46 50 102 0 ]
-[a 53C 37 46 50 102 0 ]
-[a 59C 37 46 50 102 0 ]
-[a 61C 37 46 50 102 0 ]
+[a 54C 37 46 50 102 0 ]
+[a 56C 37 46 50 102 0 ]
+[a 65C 37 46 50 102 0 ]
+[a 67C 37 46 50 102 0 ]
+[a 78C 37 46 50 102 0 ]
+[a 80C 37 46 50 102 0 ]
+[a 89C 37 46 50 102 0 ]
+[a 91C 37 46 50 102 0 ]
+[a 100C 37 46 50 102 0 ]
+[a 102C 37 46 50 102 0 ]
+[a 113C 37 46 50 102 0 ]
+[a 115C 37 46 50 102 0 ]
+[a 124C 37 46 50 102 0 ]
+[a 126C 37 46 50 102 0 ]
+[a 135C 37 46 50 102 0 ]
+[a 137C 37 46 50 102 0 ]
 [a 38C 37 49 46 48 100 0 ]
+[a 73C 37 49 46 48 100 0 ]
+[a 108C 37 49 46 48 100 0 ]
+[a 143C 37 49 46 48 100 0 ]
 [a 6C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
 [a 9C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
 [a 11C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
@@ -3536,42 +4219,107 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 41C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
 [a 44C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
 [a 46C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
-[a 49C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
 [a 52C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
-[a 54C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 55C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
 [a 57C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
-[a 60C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
-[a 62C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 63C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 66C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 68C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 76C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 79C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 81C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 87C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 90C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 92C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 98C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 101C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 103C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 111C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 114C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 116C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 122C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 125C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 127C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 133C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 136C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
+[a 138C 69 110 116 101 114 32 71 117 101 115 115 58 0 ]
 [a 2C 68 105 102 102 105 99 117 108 116 121 32 76 101 118 101 108 58 0 ]
 [a 36C 70 105 110 97 108 32 83 99 111 114 101 58 0 ]
 [a 39C 70 105 110 97 108 32 83 99 111 114 101 58 0 ]
+[a 71C 70 105 110 97 108 32 83 99 111 114 101 58 0 ]
+[a 74C 70 105 110 97 108 32 83 99 111 114 101 58 0 ]
+[a 106C 70 105 110 97 108 32 83 99 111 114 101 58 0 ]
+[a 109C 70 105 110 97 108 32 83 99 111 114 101 58 0 ]
+[a 141C 70 105 110 97 108 32 83 99 111 114 101 58 0 ]
+[a 144C 70 105 110 97 108 32 83 99 111 114 101 58 0 ]
 [a 3C 83 116 97 114 116 105 110 103 32 105 110 32 51 58 0 ]
 [a 14C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 51 58 0 ]
 [a 25C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 51 58 0 ]
+[a 49C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 51 58 0 ]
+[a 60C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 51 58 0 ]
+[a 84C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 51 58 0 ]
+[a 95C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 51 58 0 ]
+[a 119C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 51 58 0 ]
+[a 130C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 51 58 0 ]
 [a 4C 83 116 97 114 116 105 110 103 32 105 110 32 50 58 0 ]
 [a 5C 83 116 97 114 116 105 110 103 32 105 110 32 49 58 0 ]
 [a 16C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 49 58 0 ]
 [a 27C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 49 58 0 ]
+[a 51C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 49 58 0 ]
+[a 62C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 49 58 0 ]
+[a 86C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 49 58 0 ]
+[a 97C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 49 58 0 ]
+[a 121C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 49 58 0 ]
+[a 132C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 49 58 0 ]
 [a 37C 48 47 51 0 ]
+[a 72C 48 47 51 0 ]
+[a 107C 48 47 51 0 ]
+[a 142C 48 47 51 0 ]
 [a 40C 47 51 0 ]
+[a 75C 47 51 0 ]
+[a 110C 47 51 0 ]
+[a 145C 47 51 0 ]
 [a 15C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 50 0 ]
 [a 26C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 50 0 ]
+[a 50C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 50 0 ]
+[a 61C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 50 0 ]
+[a 85C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 50 0 ]
+[a 96C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 50 0 ]
+[a 120C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 50 0 ]
+[a 131C 78 101 120 116 32 83 116 97 103 101 32 105 110 32 50 0 ]
 [a 7C 48 46 48 48 0 ]
 [a 18C 48 46 48 48 0 ]
 [a 29C 48 46 48 48 0 ]
 [a 42C 48 46 48 48 0 ]
-[a 50C 48 46 48 48 0 ]
-[a 58C 48 46 48 48 0 ]
+[a 53C 48 46 48 48 0 ]
+[a 64C 48 46 48 48 0 ]
+[a 77C 48 46 48 48 0 ]
+[a 88C 48 46 48 48 0 ]
+[a 99C 48 46 48 48 0 ]
+[a 112C 48 46 48 48 0 ]
+[a 123C 48 46 48 48 0 ]
+[a 134C 48 46 48 48 0 ]
 [a 12C 89 79 85 32 87 73 78 33 33 0 ]
 [a 23C 89 79 85 32 87 73 78 33 33 0 ]
 [a 34C 89 79 85 32 87 73 78 33 33 0 ]
 [a 47C 89 79 85 32 87 73 78 33 33 0 ]
-[a 55C 89 79 85 32 87 73 78 33 33 0 ]
-[a 63C 89 79 85 32 87 73 78 33 33 0 ]
-[a 64C 89 79 85 32 87 73 78 33 33 0 ]
+[a 58C 89 79 85 32 87 73 78 33 33 0 ]
+[a 69C 89 79 85 32 87 73 78 33 33 0 ]
+[a 82C 89 79 85 32 87 73 78 33 33 0 ]
+[a 93C 89 79 85 32 87 73 78 33 33 0 ]
+[a 104C 89 79 85 32 87 73 78 33 33 0 ]
+[a 117C 89 79 85 32 87 73 78 33 33 0 ]
+[a 128C 89 79 85 32 87 73 78 33 33 0 ]
+[a 139C 89 79 85 32 87 73 78 33 33 0 ]
 [a 13C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
 [a 24C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
 [a 35C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
 [a 48C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
-[a 56C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
-[a 65C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
+[a 59C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
+[a 70C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
+[a 83C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
+[a 94C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
+[a 105C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
+[a 118C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
+[a 129C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
+[a 140C 89 79 85 32 76 79 83 69 32 58 40 32 0 ]
