@@ -6,7 +6,7 @@
  *  This Program uses the concepts of an Analog to Digital Converter, the input was replaced by a photoresistor to measure LUX
  
  * Inputs: RC2(Interrupt) RA0(Voltage divider input for ADC)
- * Outputs: PORTBbits.RD0(LCD), PORTDbits.RD1(LCD), PORTB(LCD) PORTBbits.RD3(LED)
+ * Outputs: PORTDbits.RD0(LCD), PORTDbits.RD1(LCD), PORTB(LCD) PORTDbits.RD3(LED)
  *
  *
  * Setup: C- Simulator
